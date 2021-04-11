@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #444;
+    color: #444;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: auto;
+    background-color:white;
+    box-sizing: border-box;
+    box-shadow: 0 8px 12px rgba(0,0,0,0.2);
+}
+
+.container {
+    display: flex;
+    border: none;
+    box-sizing: border-box;
+}
+
+/* ----- LEFT ----- */
+
+.left {
+    padding: 40px 60px;
+    width: 50%;
+    height: auto;
+    display: inline-block;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    margin: 20px;
+    font-weight: 600;
+}
+
+form {
+    margin: auto;
+    width: 100%;
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    outline: none;
+    align-self: center;
+    border: none;
+    box-sizing: border-box;
+    margin: 10px 0;
+    background-color: #f2f2f2;
+}
+
+.access {
+    display: flex;
+    margin: 12px 0;
+    justify-content: space-between;
+}
+
+.access input {
+    margin-right: 6px;
+}
+
+a {
+    color: #444;
+    text-decoration: none;
+}
+
+button {
+    border: none;
+    width: 100%;
+    background-color: #9c27b0;
+    padding: 10px;
+    color: white;
+    font-weight: 600;
+    outline: none;
+    cursor: pointer;
+    margin-bottom: 20px 0;
+}
+
+.connect {
+    display: inline-block;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.connect p {
+    text-align: center;
+    color: #444;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+hr {
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    border: none;
+    border-top: 1px solid #666;
+    color: #777;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+}
+
+hr:after {
+    background: #fff;
+    content: 'Or Connect with';
+    padding: 0 16px;
+    position: relative;
+    top: -10px;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    padding: 20px 40px;
+}
+
+.social i {
+    margin: 10px 12px;
+}
+
+p {
+    text-align: center;
+}
+
+/* ----- RIGHT ----- */
+
+.right {
+    padding: 40px 60px;
+    color: white;
+    width: 50%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(57,16,73);
+    background: linear-gradient(120deg, rgba(57,16,73,1) 21%, rgba(213,83,255,1) 100%);
+}
+
+.container-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.right h1, p {
+    margin: 0;
+}
+
+.right p {
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+i {
+    display: block;
+    margin: auto;
+}
+
+i.fa-user-plus {
+    margin-bottom: 10px;
+}
+.right button {
+    width: 50%;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 40px;
+    align-self: center;
+}
+
+button i {
+    margin-left: 6px;
+    
+}
+
+/* ----- MEDIA QUERIES ----- */
+
+
+/* ----- TABLET ----- */
+
+
+@media all and (min-width: 768px) and (max-width: 1023px) {
+    main {
+        width: 100%;
+        box-sizing: border-box;
+        margin: auto;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+    }
+    .left, .right {
+        width: 60vw;
+        padding: 60px;
+    }
+    .left h1 {
+        margin-top: 120px;
+    }
+}
+
+
+
+/* ----- MOBILE ----- */
+
+
+@media all and (min-width: 600px) and (max-width: 767px) { 
+    main {
+        width: 100vw;
+        box-sizing: border-box;
+        margin: auto;
+    }
+    .left h1 {
+        margin-top: 120px;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .left, .right {
+        width: 80vw;
+    }
+    .right {
+        height: 40vh;
+    }
+}
+
+@media all and (max-width: 599px) { 
+    main {
+        width: 100vw;
+        box-sizing: border-box;
+        margin: auto;
+    }
+    .left h1 {
+        margin-top: 120px;
+    }
+    .container {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .left, .right {
+        width: 80vw;
+    }
+    .right {
+        height: 40vh;
+    }
+}

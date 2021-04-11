@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <!-- Form -->
+  <!-- The for attribute of the <label> tag should be equal to the id attribute of the <input> element to bind them together. -->
+    <!-- used to reference the element in a JavaScript. -->
+    <!-- https://www.w3schools.com/html/html_form_input_types.asp -->
+
+    <form>
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="u_name" required>
+      <br>
+      <label for="user_email">Last name:</label><br>
+      <input type="text" id="user_email" name="u_email">
+    </form><hr>
+
+    <!-- Form Radio Buttons -->
+    <form class="radio_form">
+      <input type="radio" id="male" name="gender" value="male" checked>
+      <label for="male">Male</label><br>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label><br>
+      <input type="radio" id="other" name="gender" value="other">
+      <label for="other">Other</label>
+    </form><hr>
+
+
+    <form>
+      <input type="checkbox" name="my-checkbox-in" id="check_in">
+      <label for="opt-in">Check In!</label>
+      <input type="checkbox" name="my-checkbox-out" id="check_out">
+      <label for="opt-in">Check Out!</label>
+    </form><hr>
+
+    <form>
+      <select name="select_fruits" id="fruit">
+        <option value="apples">Apples</option>
+        <option value="grapes">Grapes</option>
+        <option value="pears">Pears</option>
+      </select>
+    </form><hr>
+
+
+    <div>
+      <h2>Hello H2</h2>
+      <h2>Hello H2 - second child</h2>
+      <h3>Hello H2 - third child</h3>
+    </div>
+
+  </body>
+
+  </html>
+
+

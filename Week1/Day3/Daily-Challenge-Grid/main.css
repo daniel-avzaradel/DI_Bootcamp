@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: auto;
+    background-color: aliceblue;
+    margin: auto;
+}
+
+p {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(16, auto);
+    position: absolute;
+    width: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid;
+    grid-gap: 4px;
+    box-shadow: 4px 6px 12px rgba(0,0,0,0.2);
+}
+
+
+
+.grid-item-a {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(200,200,200);
+    color: rgb(200,200,200);
+}
+.grid-item-b {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(160,160,160);
+    color: rgb(160, 160, 160);
+}
+.grid-item-c {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(120, 120, 120);
+    color: rgb(120, 120, 120);
+}
+.grid-item-d {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(60, 60, 60);
+    color: rgb(60, 60, 60);
+}
+
+
+.grid-item-e {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(200,200,200);
+    color: rgb(200,200,200);
+}
+.grid-item-f {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(160,160,160);
+    color: rgb(160, 160, 160);
+}
+.grid-item-g {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(120, 120, 120);
+    color: rgb(120, 120, 120);
+}
+.grid-item-h {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(60, 60, 60);
+    color: rgb(60, 60, 60);
+}
+
+.grid-item-i {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(200,200,200);
+    color: rgb(200,200,200);
+}
+.grid-item-j {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(160,160,160);
+    color: rgb(160, 160, 160);
+}
+.grid-item-k {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(120, 120, 120);
+    color: rgb(120, 120, 120);
+}
+.grid-item-l {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(60, 60, 60);
+    color: rgb(60, 60, 60);
+}
+
+
+.grid-item-m {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(200,200,200);
+    color: rgb(200,200,200);
+}
+.grid-item-n {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(160,160,160);
+    color: rgb(160, 160, 160);
+}
+.grid-item-o {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(120, 120, 120);
+    color: rgb(120, 120, 120);
+}
+.grid-item-p {
+    margin-bottom: 4px;
+    padding: 10px;
+    background-color: rgb(60, 60, 60);
+    color: rgb(60, 60, 60);
+}

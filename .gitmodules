@@ -1,0 +1,21 @@
+[submodule "Week1/Day2/git_tutorial_daniel"]
+	path = Week1/Day2/git_tutorial_daniel
+	url = https://github.com/daniel-avzaradel/git_tutorial_daniel.git
+[submodule "Week1/Day3/My-CV"]
+	path = Week1/Day3/My-CV
+	url = https://github.com/daniel-avzaradel/curriculum-vitae-daniel.git
+[submodule "Week1/Day2/Login-page"]
+	path = Week1/Day2/Login-page
+	url = https://github.com/daniel-avzaradel/login-page.git
+[submodule "Week1/Day4/Exercise-XP-Gold"]
+	path = Week1/Day4/Exercise-XP-Gold
+	url = https://github.com/daniel-avzaradel/responsive-bootstrap-landing.git
+[submodule "Week1/Day5/portfolio-setup"]
+	path = Week1/Day5/portfolio-setup
+	url = https://github.com/daniel-avzaradel/portfolio-setup.git
+[submodule "Week2/Day1/Exercise-XP"]
+	path = Week2/Day1/Exercise-XP
+	url = https://github.com/daniel-avzaradel/week2-day1-xp.git
+[submodule "Week1/Day5/daily-challenge-css-animation"]
+	path = Week1/Day5/daily-challenge-css-animation
+	url = https://github.com/daniel-avzaradel/daily-challenge-css-animation.git

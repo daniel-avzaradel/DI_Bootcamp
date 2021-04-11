@@ -1,0 +1,150 @@
+* {
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    color: white;
+    background-color: #550000;
+    background-image: url(../img/spiderman-bg.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+
+header {
+    position: sticky;
+    height: 40px;
+    background-color: #222;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.6);
+}
+
+main {
+    width: 100%;
+    height: 82vh;
+}
+
+#main-section {
+    width: 50%;
+    border: 0px solid #f2f2f2;
+    display: inline-block;
+    height: 50vh;
+    margin: 100px;
+    box-shadow: -8px 10px 12px rgba(0, 0, 0, 0.4);
+    padding: 60px;
+    box-sizing: border-box;
+    border-radius: 20px;
+}
+
+#main-section>img {
+    width: 120px;
+    border-radius: 75%;
+    float: left;
+    margin-right: 20px;
+}
+
+#about {
+    background-image: url(../img/img2.jpg);
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+}
+
+footer {
+    width: 100%;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;    
+    background-color: #550000;
+    height: 20vh;
+    box-sizing: border-box;
+}
+
+.news {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    border: 0px solid white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#contact p {
+    font-size: .8rem;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+form > input.field {
+    width: 50%;
+    margin-right: 20px;
+    outline: none;
+    padding: 4px;
+}
+
+form > input.field:focus {
+    background-color: #ffcdcd;
+    color: black;
+}
+
+.btn {
+    width: 20%;
+    transition: 0.4 ease all;
+    border: none;
+    border-radius: 2px;
+    font-weight: bold;
+    transition: 0.3s ease all;
+}
+.btn:hover {
+    background-color: #191F58;
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 40px;
+    transition: 0.4s ease all;
+}
+ul a:hover {
+    background-color: #D30B00;
+    color: white;
+}
+
+h1 {
+    margin-right: 40px;
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 6vw;
+    text-shadow: -10px 10px #222;
+    margin-bottom: 20px;
+    color: #f2f2f2;
+}
+
+main p {
+    width: 70%;
+    align-self: center;
+    justify-content: center;
+}
+
+h3 {
+    text-align: center;
+    font-weight: 300;
+    margin: 20px;
+}
+

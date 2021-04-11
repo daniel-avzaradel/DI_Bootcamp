@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    color: royalblue;
+    z-index: 0;
+}
+
+h1 {
+    color: #ccc;
+}
+
+main {
+    background-image: url("https://images.pexels.com/photos/2506947/pexels-photo-2506947.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section {
+    background-color: #f2f2f2;
+    height: auto;
+    padding: 40px;
+}
+
+section p {
+    color: #444;
+}
+
+.pushr {
+    margin-right: auto;
+}
+
+.btn-secondary {
+    background-color: transparent;
+}

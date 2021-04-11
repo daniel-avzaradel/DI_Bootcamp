@@ -1,0 +1,52 @@
+/*CSS [attribute] Selector*/
+/*https://www.w3schools.com/css/css_attribute_selectors.asp*/
+
+input[type="checkbox"]:checked + label{
+  background-color: lightpink;
+  border: 1px solid #adb8c0;
+  box-shadow: 0 1px 2px blue;
+  color: #99a1a7;
+}
+
+/*------------------------*/
+
+/* Pseudo class selectors */
+/* https://css-tricks.com/pseudo-class-selectors/ */
+
+/*Pseudo class selectors are CSS selectors with a colon preceding them*/
+
+form:hover {
+  background-color: lightgreen
+} 
+
+
+input:focus {
+  background-color: lightblue
+}
+
+input:required {
+  background-color: red
+}
+
+
+.radio_form > input:checked + label {
+  color: blue;
+}
+
+.radio_form > input:not(:checked) + label {
+  color: red;
+}
+
+/*----------------*/
+
+/*Position/Number-based pseudo class selectors*/
+
+
+div h2:first-child {
+  color: blue;
+}
+
+
+div h3:nth-child(3) {
+  color: blue;
+} 
