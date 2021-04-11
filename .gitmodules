@@ -19,3 +19,6 @@
 [submodule "Week1/Day5/daily-challenge-css-animation"]
 	path = Week1/Day5/daily-challenge-css-animation
 	url = https://github.com/daniel-avzaradel/daily-challenge-css-animation.git
+[submodule "Week2/Day1/calculator-js"]
+	path = Week2/Day1/calculator-js
+	url = https://github.com/daniel-avzaradel/calculator-js.git
