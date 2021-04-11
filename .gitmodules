@@ -28,3 +28,6 @@
 [submodule "Week2/Day2/daily-challenge-js-notbad"]
 	path = Week2/Day2/daily-challenge-js-notbad
 	url = https://github.com/daniel-avzaradel/daily-challenge-js-notbad.git
+[submodule "Week2/Day1/daily-challenge-js-arrays"]
+	path = Week2/Day1/daily-challenge-js-arrays
+	url = https://github.com/daniel-avzaradel/daily-challenge-js-arrays
