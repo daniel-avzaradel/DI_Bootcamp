@@ -31,3 +31,9 @@
 [submodule "Week2/Day1/daily-challenge-js-arrays"]
 	path = Week2/Day1/daily-challenge-js-arrays
 	url = https://github.com/daniel-avzaradel/daily-challenge-js-arrays
+[submodule "Week2/Day3/exercise-xp-loops"]
+	path = Week2/Day3/exercise-xp-loops
+	url = https://github.com/daniel-avzaradel/exercise-xp-loops.git
+[submodule "Week2/Day3/daily-challenge-stars-js"]
+	path = Week2/Day3/daily-challenge-stars-js
+	url = https://github.com/daniel-avzaradel/daily-challenge-stars-js.git
