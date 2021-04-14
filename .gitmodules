@@ -40,3 +40,6 @@
 [submodule "Week2/Day3/exercise-xp-gold-loops"]
 	path = Week2/Day3/exercise-xp-gold-loops
 	url = https://github.com/daniel-avzaradel/exercise-xp-gold-loops.git
+[submodule "Week2/Day4/exercise-xp-functions"]
+	path = Week2/Day4/exercise-xp-functions
+	url = https://github.com/daniel-avzaradel/exercise-xp-function.git
