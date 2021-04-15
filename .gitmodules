@@ -43,3 +43,6 @@
 [submodule "Week2/Day4/exercise-xp-functions"]
 	path = Week2/Day4/exercise-xp-functions
 	url = https://github.com/daniel-avzaradel/exercise-xp-function.git
+[submodule "Week2/Day4/daily-challenge-words-in-the-stars"]
+	path = Week2/Day4/daily-challenge-words-in-the-stars
+	url = https://github.com/daniel-avzaradel/daily-challenge-words-in-the-stars.git
