@@ -46,3 +46,6 @@
 [submodule "Week2/Day4/daily-challenge-words-in-the-stars"]
 	path = Week2/Day4/daily-challenge-words-in-the-stars
 	url = https://github.com/daniel-avzaradel/daily-challenge-words-in-the-stars.git
+[submodule "Week2/Day5/mini-project-play-the-game"]
+	path = Week2/Day5/mini-project-play-the-game
+	url = https://github.com/daniel-avzaradel/mini-project-play-the-game.git
