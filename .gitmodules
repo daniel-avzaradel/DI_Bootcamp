@@ -52,3 +52,6 @@
 [submodule "Week2/Day5/daily-challenge-99-bottles"]
 	path = Week2/Day5/daily-challenge-99-bottles
 	url = https://github.com/daniel-avzaradel/daily-challenge-99-bottles.git
+[submodule "Week2/Day5/mini-project-hanging-game"]
+	path = Week2/Day5/mini-project-hanging-game
+	url = https://github.com/daniel-avzaradel/mini-project-hanging-game.git

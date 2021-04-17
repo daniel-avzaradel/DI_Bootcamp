@@ -1,12 +1,12 @@
 // ======= EXERCISE 1 : IS_BLANK ====== //
 
-// let string = prompt("Please type in a word");
+let string = prompt("Please type in a word");
 
-// if (string === "") {
-//     console.log("True: Your string is empty")
-// } else {
-//     console.log("False: Your string is not empty")
-// }
+if (string === "") {
+    console.log("True: Your string is empty")
+} else {
+    console.log("False: Your string is not empty")
+}
 
 // ======= EXERCISE 2 : ABBREV NAME ====== //
 
