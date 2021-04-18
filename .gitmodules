@@ -55,9 +55,9 @@
 [submodule "Week2/Day5/mini-project-hanging-game"]
 	path = Week2/Day5/mini-project-hanging-game
 	url = https://github.com/daniel-avzaradel/mini-project-hanging-game.git
-[submodule "Week3/Day1/exercise-xp-dom"]
-	path = Week3/Day1/exercise-xp-dom
-	url = https://github.com/daniel-avzaradel/exercise-xp-dom
 [submodule "Week1/Day3/my-curriculum-vitae"]
 	path = Week1/Day3/my-curriculum-vitae
 	url = https://github.com/daniel-avzaradel/my-curriculum-vitae.git
+[submodule "Week3/Day2/exercise-xp-dom"]
+	path = Week3/Day2/exercise-xp-dom
+	url = https://github.com/daniel-avzaradel/exercise-xp-dom.git
