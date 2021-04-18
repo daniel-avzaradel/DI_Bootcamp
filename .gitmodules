@@ -61,3 +61,6 @@
 [submodule "Week3/Day2/exercise-xp-dom"]
 	path = Week3/Day2/exercise-xp-dom
 	url = https://github.com/daniel-avzaradel/exercise-xp-dom.git
+[submodule "Week3/Day2/daily-challenge-planets-dom"]
+	path = Week3/Day2/daily-challenge-planets-dom
+	url = https://github.com/daniel-avzaradel/daily-challenge-planets-dom.git
