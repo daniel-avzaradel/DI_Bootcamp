@@ -64,3 +64,15 @@
 [submodule "Week3/Day2/daily-challenge-planets-dom"]
 	path = Week3/Day2/daily-challenge-planets-dom
 	url = https://github.com/daniel-avzaradel/daily-challenge-planets-dom.git
+[submodule "Week1/Day5/portfolio"]
+	path = Week1/Day5/portfolio
+	url = https://github.com/daniel-avzaradel/portfolio.git
+[submodule "Week3/Day3/exercise-xp-dom-events"]
+	path = Week3/Day3/exercise-xp-dom-events
+	url = https://github.com/daniel-avzaradel/exercise-xp-dom-events.git
+[submodule "Week3/Day3/daily-challenge-mad-libs"]
+	path = Week3/Day3/daily-challenge-mad-libs
+	url = https://github.com/daniel-avzaradel/daily-challenge-mad-libs.git
+[submodule "Week3/Day4/exercise-xp-dom-animations"]
+	path = Week3/Day4/exercise-xp-dom-animations
+	url = https://github.com/daniel-avzaradel/exercise-xp-dom-animations.git
