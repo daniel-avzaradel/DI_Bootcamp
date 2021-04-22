@@ -76,3 +76,6 @@
 [submodule "Week3/Day4/exercise-xp-dom-animations"]
 	path = Week3/Day4/exercise-xp-dom-animations
 	url = https://github.com/daniel-avzaradel/exercise-xp-dom-animations.git
+[submodule "Week3/Day5/mini-project1-coloring-game"]
+	path = Week3/Day5/mini-project1-coloring-game
+	url = https://github.com/daniel-avzaradel/mini-project1-coloring-game.git
