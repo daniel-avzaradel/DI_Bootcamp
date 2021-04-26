@@ -88,3 +88,9 @@
 [submodule "Week3/Hackathon1"]
 	path = Week3/Hackathon1
 	url = https://github.com/daniel-avzaradel/ffxiv-party-generator.git
+[submodule "Week4/Day1/exercise-xp-advjs-functions"]
+	path = Week4/Day1/exercise-xp-advjs-functions
+	url = https://github.com/daniel-avzaradel/exercise-xp-advjs-functions.git
+[submodule "Week4/Day1/daily-challenge-go-wildcats"]
+	path = Week4/Day1/daily-challenge-go-wildcats
+	url = https://github.com/daniel-avzaradel/daily-challenge-go-wildcats.git
