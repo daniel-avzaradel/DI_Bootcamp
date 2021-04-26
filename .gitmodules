@@ -94,3 +94,6 @@
 [submodule "Week4/Day1/daily-challenge-go-wildcats"]
 	path = Week4/Day1/daily-challenge-go-wildcats
 	url = https://github.com/daniel-avzaradel/daily-challenge-go-wildcats.git
+[submodule "Week3/Day4/mini-project1-coloring-game"]
+	path = Week3/Day4/mini-project1-coloring-game
+	url = https://github.com/daniel-avzaradel/mini-project1-coloring-game.git
