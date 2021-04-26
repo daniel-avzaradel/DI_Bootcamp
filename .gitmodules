@@ -79,3 +79,12 @@
 [submodule "Week3/Day5/mini-project1-coloring-game"]
 	path = Week3/Day5/mini-project1-coloring-game
 	url = https://github.com/daniel-avzaradel/mini-project1-coloring-game.git
+[submodule "Week3/Day2/exercise-xp-ninja-tip-calculator"]
+	path = Week3/Day2/exercise-xp-ninja-tip-calculator
+	url = https://github.com/daniel-avzaradel/tip-calculator.git
+[submodule "Week3/Day2/xp-ninja-signup-double-slider"]
+	path = Week3/Day2/xp-ninja-signup-double-slider
+	url = https://github.com/daniel-avzaradel/xp-ninja-signup-double-slider.git
+[submodule "Week3/Hackathon1"]
+	path = Week3/Hackathon1
+	url = https://github.com/daniel-avzaradel/ffxiv-party-generator.git
