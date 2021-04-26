@@ -97,3 +97,6 @@
 [submodule "Week3/Day4/mini-project1-coloring-game"]
 	path = Week3/Day4/mini-project1-coloring-game
 	url = https://github.com/daniel-avzaradel/mini-project1-coloring-game.git
+[submodule "Week3/Day4/mini-project2-drum-kit"]
+	path = Week3/Day4/mini-project2-drum-kit
+	url = https://github.com/daniel-avzaradel/mini-project2-drum-kit.git
