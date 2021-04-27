@@ -103,3 +103,6 @@
 [submodule "Week4/Day3/exercise-xp-adv-arrays"]
 	path = Week4/Day3/exercise-xp-adv-arrays
 	url = https://github.com/daniel-avzaradel/exercise-xp-adv-arrays.git
+[submodule "Week4/Day3/dc-w4d3-car-inventory"]
+	path = Week4/Day3/dc-w4d3-car-inventory
+	url = https://github.com/daniel-avzaradel/dc-w4d3-car-inventory.git
