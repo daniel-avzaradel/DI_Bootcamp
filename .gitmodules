@@ -106,3 +106,6 @@
 [submodule "Week4/Day3/dc-w4d3-car-inventory"]
 	path = Week4/Day3/dc-w4d3-car-inventory
 	url = https://github.com/daniel-avzaradel/dc-w4d3-car-inventory.git
+[submodule "Week4/Day4/dc-w4d4-creating-objects"]
+	path = Week4/Day4/dc-w4d4-creating-objects
+	url = https://github.com/daniel-avzaradel/dc-w4d4-creating-objects.git
