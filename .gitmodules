@@ -109,3 +109,12 @@
 [submodule "Week4/Day4/dc-w4d4-creating-objects"]
 	path = Week4/Day4/dc-w4d4-creating-objects
 	url = https://github.com/daniel-avzaradel/dc-w4d4-creating-objects.git
+[submodule "Week3/Day4/dc-w3d4-to-do-list"]
+	path = Week3/Day4/dc-w3d4-to-do-list
+	url = https://github.com/daniel-avzaradel/dc-w3d4-to-do-list.git
+[submodule "Week4/Day5/mini-project1-robofriends"]
+	path = Week4/Day5/mini-project1-robofriends
+	url = https://github.com/daniel-avzaradel/mini-project1-robofriends.git
+[submodule "Week4/Day5/dc-w4d5-anagrams"]
+	path = Week4/Day5/dc-w4d5-anagrams
+	url = https://github.com/daniel-avzaradel/dc-w4d5-anagrams.git
