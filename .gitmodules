@@ -118,3 +118,6 @@
 [submodule "Week4/Day5/dc-w4d5-anagrams"]
 	path = Week4/Day5/dc-w4d5-anagrams
 	url = https://github.com/daniel-avzaradel/dc-w4d5-anagrams.git
+[submodule "Week4/Day2/daily-challenge-groceries"]
+	path = Week4/Day2/daily-challenge-groceries
+	url = https://github.com/daniel-avzaradel/daily-challenge-groceries.git
