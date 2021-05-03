@@ -121,3 +121,6 @@
 [submodule "Week4/Day2/daily-challenge-groceries"]
 	path = Week4/Day2/daily-challenge-groceries
 	url = https://github.com/daniel-avzaradel/daily-challenge-groceries.git
+[submodule "Week5/Day1/dc-w5d1-form"]
+	path = Week5/Day1/dc-w5d1-form
+	url = https://github.com/daniel-avzaradel/dc-w5d1-form.git
