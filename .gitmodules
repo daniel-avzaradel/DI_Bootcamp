@@ -124,3 +124,9 @@
 [submodule "Week5/Day1/dc-w5d1-form"]
 	path = Week5/Day1/dc-w5d1-form
 	url = https://github.com/daniel-avzaradel/dc-w5d1-form.git
+[submodule "Week5/Day2/xp-ajax-giphy-api"]
+	path = Week5/Day2/xp-ajax-giphy-api
+	url = https://github.com/daniel-avzaradel/xp-ajax-giphy-api.git
+[submodule "Week5/Day2/dc-w5d2-giphy-api"]
+	path = Week5/Day2/dc-w5d2-giphy-api
+	url = https://github.com/daniel-avzaradel/dc-w5d2-giphy-api.git
