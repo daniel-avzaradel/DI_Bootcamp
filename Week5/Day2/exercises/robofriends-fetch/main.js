@@ -1,76 +1,13 @@
-const robots = [
-    {
-      id: 1,
-      name: 'John Dorian',
-      username: 'jd',
-      email: 'jd@scrubs.com',
-      image: 'https://robohash.org/John%20Dorian'
-    },
-    {
-      id: 2,
-      name: 'Christopher Turk',
-      username: 'cturk',
-      email: 'Shanna@melissa.tv',
-      image: 'https://robohash.org/2?200x200'
-    },
-    {
-      id: 3,
-      name: 'Eliot Reid',
-      username: 'ereid',
-      email: 'ereid@scrubs.com',
-      image: 'https://robohash.org/3?200x200'
-    },
-    {
-      id: 4,
-      name: 'Perry Cox',
-      username: 'pcox',
-      email: 'pcox@scrubs.com',
-      image: 'https://robohash.org/4?200x200'
-    },
-    {
-      id: 5,
-      name: 'Ian Itor',
-      username: 'ianitor',
-      email: 'janitor@scrubs.com',
-      image: 'https://robohash.org/5?200x200'
-    },
-    {
-      id: 6,
-      name: 'Bob Kelso',
-      username: 'bobk',
-      email: 'bobkelso@scrubs.com',
-      image: 'https://robohash.org/6?200x200'
-    },
-    {
-      id: 7,
-      name: 'Carla Espinoza',
-      username: 'carlae',
-      email: 'nursecarla@scrubs.com',
-      image: 'https://robohash.org/7?200x200'
-    },
-    {
-      id: 8,
-      name: 'Jordan Sullivan',
-      username: 'jordans',
-      email: 'jordan@scrubs.com',
-      image: 'https://robohash.org/8?200x200'
-    },
-    {
-      id: 9,
-      name: 'Ted Buckland',
-      username: 'ted',
-      email: 'tedbuckland@scrubs.com',
-      image:'https://robohash.org/9?200x200'
-    },
-    {
-      id: 10,
-      name: 'The Todd',
-      username: 'todd',
-      email: 'todd@scrubs.com',
-      image:'https://robohash.org/10?200x200'
-    }
-    ];
-    
+let xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
+xhr.responseType = 'json';
+xhr.send();
+
+xhr.onload = function() {
+  createCards(xhr.response)
+}
+
+
 const root = document.getElementById('root')
 const header = document.createElement("header");
 const logo = document.createElement("h1");
@@ -89,13 +26,14 @@ header.appendChild(logo);
 header.appendChild(searchbar);
 root.appendChild(grid);
 
-for (let i=0; i < robots.length; i++) {
+const createCards = function(robots) {
+  for (let i=0; i < robots.length; i++) {
     let card = document.createElement("div")
     card.setAttribute('class', 'card')
     card.setAttribute('id', robots[i].id)
 
     let image = document.createElement('img')
-    image.setAttribute('src', robots[i].image)
+    image.setAttribute('src', `https://robohash.org/${robots[i].id}?size=200x200`)
 
     let h3 = document.createElement('h3')
     h3.textContent = robots[i].name;
@@ -107,6 +45,7 @@ for (let i=0; i < robots.length; i++) {
     card.appendChild(image)
     card.appendChild(h3)
     card.appendChild(cardp)
+}
 }
 
 let cards = document.querySelectorAll('.card')
