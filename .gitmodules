@@ -130,3 +130,6 @@
 [submodule "Week5/Day2/dc-w5d2-giphy-api"]
 	path = Week5/Day2/dc-w5d2-giphy-api
 	url = https://github.com/daniel-avzaradel/dc-w5d2-giphy-api.git
+[submodule "Week5/Day3/xp-promises"]
+	path = Week5/Day3/xp-promises
+	url = https://github.com/daniel-avzaradel/xp-promises.git
