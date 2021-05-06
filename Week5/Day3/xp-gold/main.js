@@ -1,5 +1,7 @@
 // EXERCISE 1: STAR WARS API //
 
+
+
 const urls = [
     'https://swapi.dev/api/people/1',
     'https://swapi.dev/api/people/2',
@@ -7,5 +9,6 @@ const urls = [
     'https://swapi.dev/api/people/4'
 ]
 
-let people = urls.map(url => fetch(url));
-console.log(people)
+Promise.all(urls.map(url => fetch(url).then(res => res.json())))
+.then(data => console.log(data))
+.catch(error => console.log('error'))
