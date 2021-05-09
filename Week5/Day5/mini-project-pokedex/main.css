@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+body {
+    display: flex;
+}
+
+main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main img {
+    width: 800px;
+    height: auto;
+}
+.logo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 200px;
+}
+#logo {
+    width: 300px;
+    height: 140px;
+}
+
+#left, #right {
+   width: 36px;
+   height: 26px;
+   background-color:#333;
+   position: absolute; 
+   border: 1px solid black;
+   outline: none;
+   cursor: pointer;
+   transition: 0.1s ease-in-out;
+}
+
+#left:hover, #right:hover {
+    background-color: #adadad;
+}
+
+#left {
+    bottom: 127px;
+    left: 130px;
+}
+
+#right {
+    bottom: 127px;
+    left: 190px;
+}
+
+#green {
+    position: absolute;
+    right: 80px;
+    bottom: 108px;
+    width: 62px;
+    height: 62px;
+    background-color: transparent;
+    border-radius: 50%;
+    z-index: 5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: 0.1s ease-in-out;
+}
+#green:hover {
+    background-color: rgb(114, 250, 143);
+}
+
+#content-img {
+    position: absolute;
+    left: 254px;
+    top: 36px;
+    background-color:royalblue;
+    width: 280px;
+    height: 206px;
+    border: 4px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+#content {
+    position: absolute;
+    left: 254px;
+    top: 330px;
+    background-color:rgb(247, 220, 189);
+    width: 280px;
+    height: 206px;
+    border: 4px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2, p {
+    margin: 6px;
+}
+
+.instructions {
+    position: absolute;
+    width: 240px;
+}

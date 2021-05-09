@@ -133,3 +133,9 @@
 [submodule "Week5/Day3/xp-promises"]
 	path = Week5/Day3/xp-promises
 	url = https://github.com/daniel-avzaradel/xp-promises.git
+[submodule "Week5/Day5/mini-project1-swapi"]
+	path = Week5/Day5/mini-project1-swapi
+	url = https://github.com/daniel-avzaradel/mini-project1-swapi.git
+[submodule "Week5/Day5/dc-w5d5-currency-converter"]
+	path = Week5/Day5/dc-w5d5-currency-converter
+	url = https://github.com/daniel-avzaradel/cd-w5d5-currency-converter.git
