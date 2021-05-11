@@ -54,6 +54,3 @@ select * from purchases inner join items on (purchases.items_id = items.items_id
 select first_name from purchases inner join customers on (purchases.customers_id = customers.customers_id) <br/>
 select last_name from purchases inner join customers on (purchases.customers_id = customers.customers_id) <br/>
 select name from items inner join purchases on items.items_id = purchases.items_id
-
-
--- EXERCISE 2 --
