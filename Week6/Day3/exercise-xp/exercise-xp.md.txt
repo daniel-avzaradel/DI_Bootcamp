@@ -1,0 +1,34 @@
+-- EXERCISE XP
+
+select * from language
+
+select title, description, name from film left outer join language on film.language_id = language.language_id
+select title, description, name from film full join language on film.language_id = language.language_id
+
+create table new_film (
+	id serial PRIMARY KEY,
+	name varchar(255)
+)
+
+INSERT INTO new_film (name)
+
+values ('The Last Samurai'),
+		('Amadeus'),
+		('Watchmen')
+		
+create table customer_review (
+	review_id serial not null primary key,
+	film_id serial references new_film(id) ON delete cascade,
+	language_id serial references language(language_id),
+	title text,
+	score int,
+	review_text text,
+	last_update timestamp default now()
+)
+
+select * from film
+
+INSERT INTO customer_review (language_id, title, score, review_text)
+values (1, 'The Last Samurai', 9.2, 'review text here')
+
+select * from customer_review
