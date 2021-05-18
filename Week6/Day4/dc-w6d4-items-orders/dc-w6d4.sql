@@ -6,5 +6,9 @@ create table orders (
 
 create table items (
 	item_id serial primary key,
-	price int
+	name varchar(255) not null,
+	price int not null,
+	order_id int not null,
+	foreign key(order_id) references orders(order_id) on delete cascade
 )
+

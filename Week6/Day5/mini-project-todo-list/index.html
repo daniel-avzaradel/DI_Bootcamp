@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project: To-do List</title>
+    <link rel="stylesheet" href="./main.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#html">Home</a></li>
+                <li><a href="#tasks">Tasks</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="title">
+        <h1>MINI PROJECT: TO-DO LIST</h1>
+        <p>Daniel Avzaradel</p>
+        </div>
+        <br>
+        <div class="container">
+                <table class="table">
+                    <tr>
+                        <th>Name</th>
+                        <th>Starting Date</th>
+                        <th>Days remaining</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                    
+                </table>
+        </div>
+    </main>
+
+    <div class="overlay hidden">
+        <div class="overlay-box">
+            <h2 id="h2">DESCRIPTION</h2>
+            <h3 id="h3">Title</h3>
+            <p id="desc-p">A to-do list mini project using javascript, dom, and localStorage creating an interective webpage to display the to-do list with specific requirements.</p>
+            <button id="close">Close</button>
+        </div>
+    </div>
+
+    <div class="delete-overlay hidden">
+        <div class="delete-box">
+            <i class="fas fa-exclamation-triangle fa-2x" id="warning"></i>
+            <p id="warning-p"><strong>Are you sure?</strong></p>
+            <p>This action will delete one row and cannot be undone. Do you want to proceed?</p>
+            <div class="buttons">
+            <button id="confirm">Confirm</button>
+            <button id="close1">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="save-overlay hidden">
+        <div class="save-box">
+            <i class="fas fa-exclamation-triangle fa-2x" id="save"></i>
+            <p id="save-p"><strong>Are you sure?</strong></p>
+            <p>This action will delete one row and cannot be undone. Do you want to proceed?</p>
+            <div class="buttons">
+            <button id="confirm">Confirm</button>
+            <button id="close1">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+    <script src="https://kit.fontawesome.com/2098968af1.js" crossorigin="anonymous"></script>
+</body>
+</html>
