@@ -36,20 +36,26 @@ const todoList = [
 let local = localStorage.setItem('todoList', JSON.stringify(todoList));
 let todo = localStorage.getItem('todoList')
 let parse = JSON.parse(todo)
+console.log(parse)
+
 
 const table = document.querySelector('.table');
 const closeBtn = document.getElementById('close');
 const close1Btn = document.getElementById('close1');
+const close2Btn = document.getElementById('close2');
 const confirmBtn = document.getElementById('confirm');
 const overlay = document.querySelector('.overlay');
 const delOverlay = document.querySelector('.delete-overlay');
+const editOverlay = document.querySelector('.edit-overlay');
 const overlayBox = document.querySelector('.overlay-box');
 const h2 = document.getElementById('h2');
 const h3 = document.getElementById('h3');
 const description = document.getElementById('desc-p');
 const title = document.querySelectorAll('.row td:first-child');
 
-console.log(parse.sort((a, b) => new Date(a['start date']) - new Date(b['start date'])))
+parse.sort((a, b) => new Date(a['start date']) - new Date(b['start date']))
+
+console.log(parse)
 
 
 for (let i = 1; i < todoList.length; i++) {
@@ -86,13 +92,13 @@ for (let i = 1; i < todoList.length; i++) {
             tdName.appendChild(tdNameText)
 
             let tdDate = document.createElement('td')
-            tdDate.style.textAlign = "center";
+            tdDate.style.textAlign = "left";
             tr.appendChild(tdDate)
             let tdDateText = document.createTextNode(parse[i]["start date"])
             tdDate.appendChild(tdDateText)
 
             let daysRemaining = document.createElement('td');
-            daysRemaining.style.textAlign = "center";
+            daysRemaining.style.textAlign = "left";
             tr.appendChild(daysRemaining)
 
 
@@ -111,9 +117,6 @@ for (let i = 1; i < todoList.length; i++) {
             
                 return diffInDays;
             }
-
-
-            console.log(getNumberOfDays(new Date(), parse[i]['end date']))
             
             let days = getNumberOfDays(new Date(), parse[i]['end date'])
             let daysText = daysRemaining.textContent = days;
@@ -129,6 +132,12 @@ for (let i = 1; i < todoList.length; i++) {
             let editIcon = document.createElement('i');
             editIcon.classList.add('far', 'fa-edit');
             editNode.appendChild(editIcon)
+
+            editIcon.addEventListener('click', () => {
+                clearTimeout(timer);
+                prevent = true;
+                editOverlay.classList.remove('hidden')
+            })
 
             let delNode = document.createElement('td');
             delNode.style.textAlign = "center";
@@ -184,4 +193,7 @@ closeBtn.addEventListener('click', () => {
 })
 close1Btn.addEventListener('click', () => {
     delOverlay.classList.add('hidden')
+})
+close2Btn.addEventListener('click', () => {
+    editOverlay.classList.add('hidden')
 })

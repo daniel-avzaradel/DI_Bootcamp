@@ -111,7 +111,7 @@ h1 {
     color: white;
 }
 
-.overlay, .delete-overlay {
+.overlay, .delete-overlay, .edit-overlay {
     background-color: rgba(0,0,0, 0.8);
     width: 100%;
     height: 100%;
@@ -120,7 +120,7 @@ h1 {
     left: 0;
 }
 
-.overlay-box, .delete-box {
+.overlay-box, .delete-box, .edit-box {
     position: absolute;
     z-index: 3;
     background-color:white;
@@ -152,7 +152,7 @@ h1 {
     color: #444;
     margin: 10px;
 }
-.overlay-box p, .delete-box p {
+.overlay-box p, .delete-box p, .edit-box p {
     width: 80%;
     margin: 10px;
 }
