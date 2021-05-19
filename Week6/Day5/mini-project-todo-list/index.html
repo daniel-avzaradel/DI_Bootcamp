@@ -64,10 +64,23 @@
 
     <div class="edit-overlay hidden">
         <div class="edit-box">
-            <p id="edit-p"><strong>Are you sure?</strong></p>
-            <p>This action will delete one row and cannot be undone. Do you want to proceed?</p>
+            <p id="edit-p"><strong>Edit Task</strong></p>
+            <p>Update your the information bellow.</p><br>
+
+            <form action="" id="editForm">
+                <label for="Task Name" >Name of the task:</label>
+                <input type="text" id="inpName" placeholder="name" required><br>
+                
+                <label for="Start Date">Start Date:</label>
+                <input type="date" id="inpStartDate" placeholder="Start Date" required><br>
+                
+                <label for="End Date">End Date:</label>
+                <input type="date" id="inpEndDate" placeholder="End Date" required><br>
+
+                <textarea name="textarea" id="inpDescription" cols="30" rows="10" style="resize: none" placeholder="Description" required></textarea>
+            </form>
             <div class="buttons">
-            <button id="confirm">Confirm</button>
+            <button id="save">Save</button>
             <button id="close2">Close</button>
             </div>
         </div>

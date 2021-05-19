@@ -36,7 +36,7 @@ const todoList = [
 let local = localStorage.setItem('todoList', JSON.stringify(todoList));
 let todo = localStorage.getItem('todoList')
 let parse = JSON.parse(todo)
-console.log(parse)
+parse.sort((a, b) => new Date(a['start date']) - new Date(b['start date']))
 
 
 const table = document.querySelector('.table');
@@ -52,10 +52,6 @@ const h2 = document.getElementById('h2');
 const h3 = document.getElementById('h3');
 const description = document.getElementById('desc-p');
 const title = document.querySelectorAll('.row td:first-child');
-
-parse.sort((a, b) => new Date(a['start date']) - new Date(b['start date']))
-
-console.log(parse)
 
 
 for (let i = 1; i < todoList.length; i++) {
@@ -121,10 +117,6 @@ for (let i = 1; i < todoList.length; i++) {
             let days = getNumberOfDays(new Date(), parse[i]['end date'])
             let daysText = daysRemaining.textContent = days;
 
-            if(days < 0) {
-                    tr.classList.add('over');
-            }
-
 
             let editNode = document.createElement('td');
             editNode.style.textAlign = "center";
@@ -135,8 +127,38 @@ for (let i = 1; i < todoList.length; i++) {
 
             editIcon.addEventListener('click', () => {
                 clearTimeout(timer);
+
                 prevent = true;
                 editOverlay.classList.remove('hidden')
+
+                let inpName = document.getElementById('inpName');
+                let inpStartDate = document.getElementById('inpStartDate');
+                let inpEndDate = document.getElementById('inpEndDate');
+                let inpDescription = document.getElementById('inpDescription');;
+
+                let saveBtn = document.getElementById('save');
+                saveBtn.addEventListener('click', () => {
+                    editOverlay.classList.add('hidden')
+
+                    parse[i]['name'] = inpName.value;
+                    tdNameText.textContent = parse[i]['name']
+
+                    parse[i]["start date"] = inpStartDate.value
+                    tdDateText = parse[i]["start date"];
+
+                    parse[i]["end date"] = inpEndDate.value
+
+                    parse[i]['description'] = inpDescription.value
+
+                    days = getNumberOfDays(new Date(), parse[i]['end date'])
+                    daysText = daysRemaining.textContent = days;
+
+                    console.log(parse)
+                    window.localStorage.setItem('todoList', JSON.stringify(parse));
+
+                    console.log(localStorage)
+                })
+
             })
 
             let delNode = document.createElement('td');
@@ -158,6 +180,10 @@ for (let i = 1; i < todoList.length; i++) {
                     delOverlay.classList.add('hidden')
                 })
             })
+
+            if(days < 0) {
+                tr.classList.add('over');
+            }
     }
     createElements();
 

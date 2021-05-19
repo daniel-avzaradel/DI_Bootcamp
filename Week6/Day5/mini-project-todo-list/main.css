@@ -74,8 +74,8 @@ h1 {
 }
 
 .container {
-    width: auto;
-    height: 620px;
+    width: 600px;
+    height: auto;
     box-sizing: border-box;
     margin: auto;
 }
@@ -157,7 +157,7 @@ h1 {
     margin: 10px;
 }
 
-#close, #close1, #confirm {
+#close, #close1, #close2, #confirm, #save {
     border: none;
     outline: none;
     padding: 10px 30px;
@@ -168,11 +168,11 @@ h1 {
     transition: 0.2s ease-in-out;
 }
 
-#close, #close1 {
+#close, #close1, #close2 {
     background-color: rgb(224, 75, 75);
 }
 
-#confirm {
+#confirm, #save {
     background-color: rgb(75, 152, 224);
 }
 
@@ -186,6 +186,32 @@ h1 {
 
 .fa-check {
     margin: 0 10px;
+}
+
+#editForm {
+    display: flex;
+    width: 360px;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+#editForm input {
+    padding: 6px;
+    margin: 4px;
+    width: 100%;
+    background-color: #f2f2f2;
+    border: none;
+    outline: none;
+}
+
+textarea {
+    margin: 10px;
+    width: 100%;
+    padding: 4px;
+    border: none;
+    outline: none;
+    background-color: #f2f2f2;
 }
 
 @media screen and (min-width:426px) and (max-width: 768px) {
