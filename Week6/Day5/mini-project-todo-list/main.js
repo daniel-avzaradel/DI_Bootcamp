@@ -33,7 +33,7 @@ const todoList = [
 ]
 
 
-let local = localStorage.setItem('todoList', JSON.stringify(todoList));
+localStorage.setItem('todoList', JSON.stringify(todoList));
 let todo = localStorage.getItem('todoList')
 let parse = JSON.parse(todo)
 parse.sort((a, b) => new Date(a['start date']) - new Date(b['start date']))
