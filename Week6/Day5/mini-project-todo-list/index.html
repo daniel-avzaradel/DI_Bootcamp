@@ -63,6 +63,9 @@
     </div>
 
     <div class="edit-overlay hidden">
+        <div class="error-header hidden">
+            <p>An entry is required or has an invalid value.</p><i class="far fa-times-circle" id="close-error"></i>
+        </div>
         <div class="edit-box">
             <p id="edit-p"><strong>Edit Task</strong></p>
             <p>Update your the information bellow.</p><br>
@@ -78,10 +81,13 @@
                 <input type="date" id="inpEndDate" placeholder="End Date" required><br>
 
                 <textarea name="textarea" id="inpDescription" cols="30" rows="10" style="resize: none" placeholder="Description" required></textarea>
+
             </form>
+            
             <div class="buttons">
             <button id="save">Save</button>
             <button id="close2">Close</button>
+
             </div>
         </div>
     </div>

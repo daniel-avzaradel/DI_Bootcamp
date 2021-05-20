@@ -214,6 +214,25 @@ textarea {
     background-color: #f2f2f2;
 }
 
+.error-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: rgb(255, 71, 71);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s ease-out;
+    opacity: 1;
+}
+.error-header i {
+    margin: 0 10px;
+    cursor: pointer;
+}
+
 @media screen and (min-width:426px) and (max-width: 768px) {
     main {
         width: 90%;

@@ -38,47 +38,55 @@
 // }
 
 
-class SomeClass {
-  constructor() {
-    this.name = 'Daniel';
-  }
-  getName() {
-    return this.name;
-  }
-  setName(value) {
-    this.name = value;
-  }
-}
+// class SomeClass {
+//   constructor() {
+//     this.name = 'Daniel';
+//   }
+//   getName() {
+//     return this.name;
+//   }
+//   setName(value) {
+//     this.name = value;
+//   }
+// }
 
-let a = new SomeClass();
-let b = new SomeClass();
+// let a = new SomeClass();
+// let b = new SomeClass();
 
-b.setName('Zivuch');
+// b.setName('Zivuch');
 
-class Human {
-  constructor() {
-    this.name = 'Human';
-    this.gender = '';
-    this.profession = '';
-    this.age = '';
-  }
-  setName(value) {
-    this.name = value;
-  }
-  setGender(gender) {
-    this.gender = gender;
-  }
-  setProfession(prof) {
-    this.profession = prof;
-  }
-  setAge(age) {
-    this.age = age;
-  }
-}
+// class Human {
+//   constructor() {
+//     this.name = 'Human';
+//     this.gender = '';
+//     this.profession = '';
+//     this.age = '';
+//   }
+//   setName(value) {
+//     this.name = value;
+//   }
+//   setGender(gender) {
+//     this.gender = gender;
+//   }
+//   setProfession(prof) {
+//     this.profession = prof;
+//   }
+//   setAge(age) {
+//     this.age = age;
+//   }
+// }
 
-let daniel = new Human();
-daniel.setName('Daniel')
-daniel.setGender('male')
-daniel.setProfession('programmer')
-daniel.setAge(32)
-console.log(daniel)
+// let daniel = new Human();
+// daniel.setName('Daniel')
+// daniel.setGender('male')
+// daniel.setProfession('programmer')
+// daniel.setAge(32)
+// console.log(daniel)
+
+let myObj = [
+  {a: 1},
+  {b: 2},
+  {c: 3}
+]
+
+console.log(myObj[1])

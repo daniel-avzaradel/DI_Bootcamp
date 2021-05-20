@@ -1,3 +1,37 @@
+// const todoList = [
+//     {
+//         'name': 'header'
+//     },
+//     {
+//         'name': "Mini Project",
+//         "description": "A to-do list mini project using javascript, dom, and localStorage creating an interective webpage to display the to-do list with specific requirements.",
+//         "start date": new Date('2021-05-17').toISOString().substring(0, 10),
+//         "end date": new Date('2021-05-20').toISOString().substring(0, 10),
+//         "status": "active"
+//     },
+//     {
+//         "name": "DOM",
+//         "description": "A mini project using the tools of DOM (Document Object Manipulation) to create interaction with JavaScript",
+//         "start date": new Date('2021-05-20').toISOString().substring(0, 10),
+//         "end date": new Date('2021-05-27').toISOString().substring(0, 10),
+//         "status": "active"
+//     },
+//     {
+//         "name": "PostgreSQL",
+//         "description": "A database project to work on postgresql queries on PgAdmin4 tool.",
+//         "start date": new Date('2021-05-19').toISOString().substring(0, 10),
+//         "end date": new Date('2021-05-25').toISOString().substring(0, 10),
+//         "status": "active"
+//     },
+//     {
+//         "name": "React",
+//         "description": "Create a project using REACT, an open-source front-end JavaScript library for building user interfaces or UI components.",
+//         "start date": new Date('2021-05-12').toISOString().substring(0, 10),
+//         "end date": new Date('2021-05-17').toISOString().substring(0, 10),
+//         "status": "active"
+//     },
+// ]
+
 const todoList = [
     {
         'name': 'header'
@@ -32,12 +66,23 @@ const todoList = [
     },
 ]
 
+// localStorage.clear()
 
-localStorage.setItem('todoList', JSON.stringify(todoList));
-let todo = localStorage.getItem('todoList')
-let parse = JSON.parse(todo)
-parse.sort((a, b) => new Date(a['start date']) - new Date(b['start date']))
 
+function sortList() {
+    return todoList.sort((a, b) => new Date(a['start date']) - new Date(b['start date']))
+}
+sortList();
+
+if(localStorage.length > 0) {
+    
+} else {
+    localStorage.setItem('todolist', JSON.stringify(todoList));
+}
+
+
+let a = JSON.parse(localStorage.getItem('todolist'))
+console.log(a)
 
 const table = document.querySelector('.table');
 const closeBtn = document.getElementById('close');
@@ -54,7 +99,8 @@ const description = document.getElementById('desc-p');
 const title = document.querySelectorAll('.row td:first-child');
 
 
-for (let i = 1; i < todoList.length; i++) {
+for (let i = 1; i < a.length; i++) {
+    debugger;
 
     let icon = document.createElement('i');
     let tr = document.createElement('tr');
@@ -83,14 +129,16 @@ for (let i = 1; i < todoList.length; i++) {
             tr.appendChild(tdName);
 
             let tdNameText = document.createElement('p')
-            tdNameText.textContent = parse[i]['name']
+            tdNameText.textContent = a[i]['name']
+
             tdNameText.style.textAlign = "left";
             tdName.appendChild(tdNameText)
 
             let tdDate = document.createElement('td')
             tdDate.style.textAlign = "left";
             tr.appendChild(tdDate)
-            let tdDateText = document.createTextNode(parse[i]["start date"])
+            let tdDateText = document.createElement('p')
+            tdDateText.textContent = a[i]["start date"]
             tdDate.appendChild(tdDateText)
 
             let daysRemaining = document.createElement('td');
@@ -114,7 +162,7 @@ for (let i = 1; i < todoList.length; i++) {
                 return diffInDays;
             }
             
-            let days = getNumberOfDays(new Date(), parse[i]['end date'])
+            let days = getNumberOfDays(new Date(), a[i]['end date'])
             let daysText = daysRemaining.textContent = days;
 
 
@@ -122,6 +170,7 @@ for (let i = 1; i < todoList.length; i++) {
             editNode.style.textAlign = "center";
             tr.appendChild(editNode);
             let editIcon = document.createElement('i');
+
             editIcon.classList.add('far', 'fa-edit');
             editNode.appendChild(editIcon)
 
@@ -137,26 +186,52 @@ for (let i = 1; i < todoList.length; i++) {
                 let inpDescription = document.getElementById('inpDescription');;
 
                 let saveBtn = document.getElementById('save');
+                let error = document.querySelector('.error-header');
+                
+
                 saveBtn.addEventListener('click', () => {
-                    editOverlay.classList.add('hidden')
 
-                    parse[i]['name'] = inpName.value;
-                    tdNameText.textContent = parse[i]['name']
+                    if (inpName.value == '' || inpName.value == null || inpStartDate.value == '' || inpStartDate.value == null || inpEndDate.value == ''
+                    || inpEndDate.value == null || inpDescription.value == '' || inpDescription.value == null) {
+                        
+                        error.classList.remove('hidden')
+                        let closeError = document.getElementById('close-error');
+                        closeError.addEventListener('click', () => {
+                            error.classList.add('hidden')
+                        })
 
-                    parse[i]["start date"] = inpStartDate.value
-                    tdDateText = parse[i]["start date"];
+                        setTimeout(function() {
+                            error.style.opacity = 0;
+                        }, 4000) 
 
-                    parse[i]["end date"] = inpEndDate.value
+                            error.style.opacity = 1;
 
-                    parse[i]['description'] = inpDescription.value
+                    } else {    
+                        error.classList.add('hidden')
+                        editOverlay.classList.add('hidden')
 
-                    days = getNumberOfDays(new Date(), parse[i]['end date'])
-                    daysText = daysRemaining.textContent = days;
+                        a[i]['name'] = inpName.value;
+                        tdNameText.textContent = a[i]['name']
 
-                    console.log(parse)
-                    window.localStorage.setItem('todoList', JSON.stringify(parse));
+                        a[i]["start date"] = inpStartDate.value
+                        tdDateText.textContent = a[i]["start date"];
 
-                    console.log(localStorage)
+                        a[i]["end date"] = inpEndDate.value
+                        
+                        a[i]['description'] = inpDescription.value
+
+                        days = getNumberOfDays(new Date(), a[i]['end date'])
+                        daysText = daysRemaining.textContent = days;
+                    
+                        sortList();
+
+                        if (localStorage.length > 0) {
+                            localStorage.clear();
+                            localStorage.setItem('todolist', JSON.stringify(a))
+                            console.log(localStorage)
+                        }
+                    }
+                   
                 })
 
             })
@@ -176,8 +251,21 @@ for (let i = 1; i < todoList.length; i++) {
                 delOverlay.classList.remove('hidden')
 
                 confirmBtn.addEventListener('click', () => {
+
+                    a.splice(i, 1)
+                    console.log(a)
+
                     tr.remove();
                     delOverlay.classList.add('hidden')
+
+                    console.log(localStorage)
+
+                    if (localStorage.length > 0) {
+                        localStorage.clear();
+                        localStorage.setItem('todolist', JSON.stringify(a))
+                        sortList();
+                        console.log(localStorage)
+                    }
                 })
             })
 
@@ -195,8 +283,8 @@ for (let i = 1; i < todoList.length; i++) {
         timer = setTimeout(() => {
             if(!prevent) {
                 overlay.classList.remove('hidden')
-                h3.textContent = parse[i]["name"];
-                description.textContent = parse[i]["description"];
+                h3.textContent = todoList[i]["name"];
+                description.textContent = todoList[i]["description"];
             }
             prevent = false;
         }, 300)
