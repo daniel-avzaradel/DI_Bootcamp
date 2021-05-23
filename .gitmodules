@@ -139,3 +139,6 @@
 [submodule "Week5/Day5/dc-w5d5-currency-converter"]
 	path = Week5/Day5/dc-w5d5-currency-converter
 	url = https://github.com/daniel-avzaradel/cd-w5d5-currency-converter.git
+[submodule "Week6/Day5/dc-w6d5-todolist"]
+	path = Week6/Day5/dc-w6d5-todolist
+	url = https://github.com/daniel-avzaradel/dc-w6d5-todolist-localstorage.git
