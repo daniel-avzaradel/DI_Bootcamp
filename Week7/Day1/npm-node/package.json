@@ -1,0 +1,22 @@
+{
+  "name": "npm-node",
+  "version": "1.0.0",
+  "description": "exercise-xp",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main.js"
+  },
+  "keywords": [
+    "exercise",
+    "xp",
+    "node",
+    "js",
+    "npm"
+  ],
+  "author": "daniel avzaradel",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
