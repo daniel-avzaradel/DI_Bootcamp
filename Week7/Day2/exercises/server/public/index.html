@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Index HTML</h1>
+
+    <h2>GET</h2>
+    <form action="http://localhost:3000/login" method="GET">
+    username: <input type="text" name="username">
+    password: <input type="password" name="password">
+    <input type="submit" value="Submit with GET">
+    </form>
+
+    <br>
+
+    <h2>POST</h2>
+    <form action="http://localhost:3000/login" method="POST">
+        username: <input type="text" name="username">
+        password: <input type="password" name="password">
+        <input type="submit" value="Submit with POST">
+        </form>
+
+    <br>
+
+    <h2>FETCH</h2>
+        username: <input type="text" name="username" id="user">
+        password: <input type="password" name="password" id="pass">
+        <button type="button" onClick="sendData()">Fetch the server</button>
+        </form>
+
+    <script src="./main.js"></script>
+        
+</body>
+</html>
