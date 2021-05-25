@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    display: block;
+    justify-content: center;
+}
+
+h1 {
+    color: salmon;
+    border: 4px dashed royalblue;
+    text-align: center;
+    padding: 6px;
+}
+
+h2 {
+    text-align: center;
+    padding: 6px;
+}
