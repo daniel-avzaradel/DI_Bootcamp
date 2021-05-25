@@ -21,3 +21,9 @@ h2 {
     text-align: center;
     padding: 6px;
 }
+button {
+    padding: 6px;
+    font-weight: bold;
+    color: royalblue;
+    margin: 10px;
+}
