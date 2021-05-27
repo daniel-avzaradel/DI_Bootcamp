@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Project: My Shopping List</title>
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My Shopping List</h1>
+        <p>by: Daniel Avzaradel</p>
+
+        <form action="http://localhost:3000/formdata" method="post">
+            Item: <input type="text" name="item">
+            Amount: <input type="number" name="amount">
+            <button type="submit" value="Submit">Submit</button>
+
+        </form>
+
+        <div id="list">           
+        </div>
+    </div>    
+
+    <script src="./script.js"></script>
+</body>
+</html>
