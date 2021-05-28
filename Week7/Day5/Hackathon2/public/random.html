@@ -11,6 +11,27 @@
 </head>
 <body>
 
+    <aside id="left">
+        <i class="fas fa-chevron-right fa-1x" onClick="expand()" id="expand"></i>
+
+        <div id="profile">
+        <i class="fas fa-user" id="user" onClick="closePop()"></i><span id="login" onClick="closePop()">Log In / Sign Up</span>
+        </div>
+        <br>
+        <p>Welcome, <span id="loggedUser">Guest</span> </p>
+
+        <br>
+
+        <nav>
+            <ul>
+                <a href="./index.html"><li>Home</li></a>
+                <a href="./random.html"><li>Absolute Pitch</li></a>
+                <a href="./melodic.html"><li>Melodic Intervals</li></a>
+                <br><br>
+            </ul>
+        </nav>
+    </aside>
+
     <div class="container">
 
         <div id="header">
@@ -22,7 +43,7 @@
             
             <div id="controls">
                 <i class="fas fa-power-off"></i>
-                <a href="../public/index.html">
+                <a href="./index.html">
                 <button id="power">POWER</button></a>
                 <div id="led"></div>
             </div>
@@ -93,9 +114,8 @@
             </div>
 
             <div class="buttons">
-                <a href="../public/random.html"><button id="ex-note" class="selected">Absolute Pitch</button></a>
-                <a href="../public/melodic.html"><button id="ex-melodic">Melodic Intervals</button></a>
-                <button id="ex-harmonic">Harmonic Intervals</button>
+                <a href="./random.html"><button id="ex-note" class="selected">Absolute Pitch</button></a>
+                <a href="./melodic.html"><button id="ex-melodic">Melodic Intervals</button></a>
             </div>
 
         </div>
@@ -133,6 +153,58 @@
             <button class="close" onClick="closeOverlay()">Close</button>
         </div>
     </div>
+
+    <div class="login-overlay hidden">
+
+        <div class="login-box">
+
+            <div class="signup">
+                <h2>SIGN UP</h2>
+                <br>
+                <form action="http://localhost:3000/" method="post" class="signup-form" id="singup-form">
+                    
+                    <div class="input-box">
+                    <input type="text" name="name" placeholder="Name" id="signName" required>
+                    <i class="fas fa-user-plus fa-1x" class="usericon"></i>
+
+                    </div>
+
+                    <div class="input-box">
+                    <input type="password" name="password" placeholder="Password" id="signPass" required>
+                    <i class="fas fa-lock-open fa-1x" class="lockicon"></i>
+                    <p id="dot">.</p>
+                    </div>
+                    <br>
+                    <button type="submit">Create Account</button>
+
+                </form>
+            </div>
+
+            <div class="login">
+                <h2>LOG IN</h2>
+                <br>
+                <form action="http://localhost:3000/users/login" method="post" class="signup-form" id="login-form">
+                    
+                    <div class="input-box">
+                    <input type="text" name="name" placeholder="Name" id="logName" required>
+                    <i class="fas fa-user-plus fa-1x" class="usericon"></i>
+                    
+                    </div>
+
+                    <div class="input-box">
+                    <input type="password" name="password" placeholder="Password" id="logPass" required>
+                    <i class="fas fa-lock-open fa-1x" class="lockicon"></i>
+                    <p id="wrongLog">Username or password incorrect.</p>
+                    </div>
+                    <br>
+                    <button type="submit">Login</button>
+
+                </form>
+            </div>        
+        </div>
+
+    </div>
+
 
     <script src="../js/random.js"></script>
     <script src="https://kit.fontawesome.com/2098968af1.js" crossorigin="anonymous"></script>
