@@ -6,21 +6,32 @@ const sum = 5 + 5;
 const reactisbetter = (
   <h1>React is {sum} times better with JSX</h1>
 )
+const fruitList = (
+  <ul>
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Oranges</li>
+    <li>Cherries</li>
+  </ul>
+)
 
 function App() {
   return (
     <>
       <p>Exercise 1:</p>
       <h1>HELLO WORLD!</h1>
-      <br></br>
+      
       <p>Exercise 2:</p>
       {myelement}
-      <br></br>
+
       <p>Exercise 3:</p>
       <Myelement/>
-      <br></br>
+   
       <p>Exercise 4:</p>
       {reactisbetter}
+  
+      <p>Exercise 5:</p>
+      {fruitList}
     </>
   );
 }
