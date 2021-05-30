@@ -22,6 +22,12 @@ const headers = (
   </>
 )
 
+const input = (
+  <>
+    <input type="text" placeholder="input"></input>
+  </>
+)
+
 function App() {
   return (
     <>
@@ -42,6 +48,9 @@ function App() {
 
       <p>Exercise 6:</p>
       {headers}
+
+      <p>Exercise 7:</p>
+      {input}
     </>
   );
 }
