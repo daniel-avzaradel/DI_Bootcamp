@@ -1,5 +1,6 @@
 import './App.css';
-import Myelement from './Myelement'
+
+const myelement = <h1>I Love JSX!</h1>;
 
 function App() {
   return (
@@ -8,7 +9,7 @@ function App() {
       <h1>HELLO WORLD!</h1>
       <br></br>
       <p>Exercise 2:</p>
-      <Myelement/>
+      {myelement}
     </>
   );
 }
