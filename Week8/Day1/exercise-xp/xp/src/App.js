@@ -15,6 +15,13 @@ const fruitList = (
   </ul>
 )
 
+const headers = (
+  <>
+    <header><h1>I am a Header</h1></header>
+    <header><h1>I am a Header too.</h1></header>
+  </>
+)
+
 function App() {
   return (
     <>
@@ -32,6 +39,9 @@ function App() {
   
       <p>Exercise 5:</p>
       {fruitList}
+
+      <p>Exercise 6:</p>
+      {headers}
     </>
   );
 }
