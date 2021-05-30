@@ -28,6 +28,9 @@ const input = (
   </>
 )
 
+const name = "John";
+const age = 12;
+
 function App() {
   return (
     <>
@@ -51,6 +54,9 @@ function App() {
 
       <p>Exercise 7:</p>
       {input}
+
+      <p>Exercise 8:</p>
+      <p>{name} is {age} years old.</p>
     </>
   );
 }
