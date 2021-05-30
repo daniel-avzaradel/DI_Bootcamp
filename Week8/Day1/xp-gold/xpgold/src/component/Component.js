@@ -1,6 +1,12 @@
 import React from 'react';
 
 const Component = () => {
+    const mystyle = {
+        color: 'white',
+        backgroundColor: 'DodgerBlue',
+        padding: '10px',
+        fontFamily: 'Arial'
+    }
         return (
         <div>
         <h1>This is a header</h1>
@@ -21,8 +27,11 @@ const Component = () => {
                 <li>Tea</li>
                 <li>Milk</li>
                 <h2>EXERCISE 2 : Styling React Using CSS #1</h2>
-                <header style={{color: "salmon", fontWeight: "bold"}}>HELLO STYLE!</header>
-                <header style={{color: "salmon", fontWeight: "bold", backgroundColor: "lightblue"}}>HELLO STYLE!</header>
+                <header style={{color: "salmon", fontWeight: "bold"}}>Hello Style!</header>
+                <header style={{color: "salmon", fontWeight: "bold", backgroundColor: "lightblue"}}>Hello Style!</header>
+                <h2>EXERCISE 3 : Styling React Using CSS #2</h2>
+                <header style={mystyle}>Hello Style!</header>
+
             </ul>
         </form>
         </div>
