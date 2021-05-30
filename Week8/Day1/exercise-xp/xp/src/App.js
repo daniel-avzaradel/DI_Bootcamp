@@ -1,4 +1,5 @@
 import './App.css';
+import Myelement from './Myelement'
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <h1>HELLO WORLD!</h1>
       <br></br>
       <p>Exercise 2:</p>
+      <Myelement/>
     </>
   );
 }
