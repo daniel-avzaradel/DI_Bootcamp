@@ -1,7 +1,9 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import Button from 'react-bootstrap/Button'
 
-const Jumbotron = (props) => {
+const Jumbotron1 = (props) => {
   const { title, description, buttonLabel, buttonUrl } = props;
   return (
     <Jumbotron>
@@ -11,10 +13,10 @@ const Jumbotron = (props) => {
       </p>
       <p>
         <a href={buttonUrl}>
-        <button variant="primary">{buttonLabel}</button></a>
+        <Button variant="primary">{buttonLabel}</Button></a>
       </p>
     </Jumbotron>
   );
 };
 
-export default Jumbotron;
+export default Jumbotron1;
