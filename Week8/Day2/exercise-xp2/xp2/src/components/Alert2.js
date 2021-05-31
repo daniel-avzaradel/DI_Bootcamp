@@ -3,7 +3,7 @@ import React from 'react';
 const Alert2 = (props) => {
     const {text, show} = props;
 
-    if(props.show === false){
+    if(show === false){
         return null;
     }
     else{
