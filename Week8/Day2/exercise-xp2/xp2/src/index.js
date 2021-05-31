@@ -11,6 +11,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Alert text="OMG! Something really bad has happended!"/>
     <Alert2 text="This is a danger alert-Check it out!" show={true}/>
+    <Alert3 text="This is a primary alert-check it out!" color="red"/>
 
   </React.StrictMode>,
   document.getElementById('root')
