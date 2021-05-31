@@ -5,6 +5,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import PrintHello from './components/PrintHello';
 import ReactComponent from './components/ReactComponent';
 import BootstrapCard from './components/BootstrapCard';
+import BootstrapCard2 from './components/BootstrapCard2';
+import Jumbotron from './components/Jumbotron';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -12,7 +14,19 @@ ReactDOM.render(
     <PrintHello />
     <ReactComponent />
     <BootstrapCard title="Bob Dylan" />
-    <BootstrapCard title="Paul McCartney" />
+    <BootstrapCard2 
+    title="McCartney"
+    imageUrl='https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Paul_McCartney_in_October_2018.jpg/240px-Paul_McCartney_in_October_2018.jpg'
+    buttonLabel='Go to Wikipedia'
+    buttonUrl='https://en.wikipedia.org/wiki/Paul_McCartney'
+    description='Sir James Paul McCartney CH MBE (born 18 June 1942) is an English singer, songwriter, musician, composer, and record and film producer who gained worldwide fame as co-lead vocalist and bassist for the Beatles.'
+    />
+    <Jumbotron
+    title="Welcome to react"
+    description="React is the most popular rendering library in the world"
+    buttonLabel="Go to the official website"
+    buttonURL="https://reactjs.org/"
+/>
   </React.StrictMode>,
   document.getElementById('root')
 );

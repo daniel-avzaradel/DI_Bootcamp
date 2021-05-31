@@ -9,7 +9,7 @@ const BootstrapCard = () => {
         <img
           className="card-img-top"
           src="https://miro.medium.com/max/4800/1*_EDEWvWLREzlAvaQRfC_SQ.jpeg"
-          alt="Card image cap"
+          alt="Bob Dylan Card"
         />
         <div className="card-body">
           <h5 className="card-title">Bob Dylan</h5>
