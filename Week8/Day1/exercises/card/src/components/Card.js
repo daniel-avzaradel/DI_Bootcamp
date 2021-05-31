@@ -1,7 +1,6 @@
 import React from 'react';
 
 const Card = (props) => {
-    console.log(props);
     const {data} = props;
     const {name, email, id} = data;
     return (
