@@ -7,14 +7,13 @@ const Alert3 = (props) => {
         orange: 'alert-warning',
         green: 'alert-success'
     }
-    console.log(color)
-    if (colorClasses[props.color] == undefined) {
+    if (colorClasses[color] === undefined) {
         return (
             alert('color does not exist')
         )
     } else {
         return (
-            <div class={`alert ${colorClasses[props.color]}`} role="alert">
+            <div className={`alert ${colorClasses[color]}`} role="alert">
             {text}
             </div>
             )

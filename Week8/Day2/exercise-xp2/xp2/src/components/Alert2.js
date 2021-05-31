@@ -9,7 +9,7 @@ const Alert2 = (props) => {
     else{
         // return here the component html
         return(
-            <div class="alert alert-danger" role="alert">
+            <div className="alert alert-danger" role="alert">
             {text}
             </div>
         )
