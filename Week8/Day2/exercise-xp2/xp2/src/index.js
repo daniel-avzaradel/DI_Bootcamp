@@ -6,12 +6,13 @@ import Alert from './components/Alert';
 import "bootstrap/dist/css/bootstrap.min.css";
 import reportWebVitals from './reportWebVitals';
 import Alert2 from './components/Alert2';
+import Alert3 from './components/Alert3';
 
 ReactDOM.render(
   <React.StrictMode>
     <Alert text="OMG! Something really bad has happended!"/>
     <Alert2 text="This is a danger alert-Check it out!" show={true}/>
-    <Alert3 text="This is a primary alert-check it out!" color="red"/>
+    <Alert3 text="This is a primary alert-check it out!" color="green"/>
 
   </React.StrictMode>,
   document.getElementById('root')
