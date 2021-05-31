@@ -27,7 +27,7 @@ ReactDOM.render(
     description="React is the most popular rendering library in the world"
     buttonLabel="Go to the official website"
     buttonURL="https://reactjs.org/"
-/>
+    />
   </React.StrictMode>,
   document.getElementById('root')
 );
