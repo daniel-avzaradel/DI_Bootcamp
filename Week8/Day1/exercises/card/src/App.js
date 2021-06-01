@@ -3,6 +3,8 @@ import './App.css';
 import CardsList from './components/CardsList';
 import SearchBox from './components/SearchBox';
 import 'tachyons';
+import axios from 'axios';
+
 
 
 class App extends React.Component {
@@ -10,26 +12,27 @@ class App extends React.Component {
     super();
     this.state = {
       arr: [],
-      searchText: ''
     }
   }
-  componentDidMount(){
-    fetch('https://jsonplaceholder.typicode.com/users')
-    .then(res => res.json())
-    .then(data => {
-      this.setState({ arr:data })
-    })
-    .catch(err => {
-      console.log(err);
-    })
+  async componentDidMount(){
+    // axios
+    try {
+      let res = await axios.get('https://jsonplaceholder.typicode.com/users');
+      let data = res.data;
+      console.log(data)
+      this.setState({arr:data})
+    }
+    catch(err) {
+      console.log(err)
+    }
   }
 
-  handleFunction = (event) => {
+  handleChange = (event) => {
     this.setState({ searchText: event.target.value })
   }
 
   handleClick = () => {
-    console.log('click')
+    this.setState({ searchText: this.state.searchText })
   }
 
   render(){
@@ -39,7 +42,7 @@ class App extends React.Component {
 
     return (
       <>
-        <SearchBox daniel={this.handleFunction} click={this.handleClick}/>
+        <SearchBox handleClick={this.handleClick}/>
         <CardsList robots={filteredRobots} />
       </>
     );
