@@ -39,9 +39,33 @@ class App extends React.Component {
         </div>
         <div id="prev">Before the update the favorite was </div>
         <div id="after">The updated favorite is</div>
+    
+        <Child />
       </>
     )
   }
 }
+
+class Child extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+        show: true
+      }
+    }
+
+    componentWillUnmount() {
+      alert('The component named Header is about to be unmounted')
+    }
+
+    render() {
+      return(
+        <>
+        <header><strong>Hello World</strong></header>
+        </>
+      )
+    }
+
+  }
 
 export default App;
