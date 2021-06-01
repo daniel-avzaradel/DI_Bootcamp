@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      favoriteColor: 'red',
+    }
+  }
+
+  componentDidMount() {
+      this.setState({favoriteColor: 'red'})
+
+      setTimeout(() => {
+        this.setState({favoriteColor: 'yellow'})
+      }, 2000)
+  }
+
+  componentDidUpdate() {
+    const after = document.getElementById('after')
+    after.textContent = `The updated favorite is ${this.state.favoriteColor}`
+  }
+
+  shouldComponentUpdate(nextState) {
+      return true;
+  }
+
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    document.getElementById('prev')
+    .textContent = `Before the update the favorite was ${prevState.favoriteColor}`;
+  }
+
+  render() {
+    return(
+      <>
+        <p>Ex.1: ComponentDidUpdate</p>
+        <div>
+          <h1>My Favorite Color is {this.state.favoriteColor}</h1>
+        </div>
+        <div id="prev">Before the update the favorite was </div>
+        <div id="after">The updated favorite is</div>
+      </>
+    )
+  }
 }
 
 export default App;
