@@ -1,8 +1,15 @@
-const exp = require('express')
-const app = exp();
+const exp = require('express');
+const cors = require('cors');
+const DB = require('./modules/db.js')
 
-app.get('/', function (req, res) {
-    res.send('Hello World')
+
+const app = exp();
+app.use(cors());
+
+app.get('/getCountries', function (req, res) {
+    // const countries = req.body
+    // res.send(countries)
+    res.send('ok')
   })
 
 app.set('port', 3000)
