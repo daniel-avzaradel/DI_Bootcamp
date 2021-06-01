@@ -1,6 +1,7 @@
 const exp = require('express');
 const bp = require('body-parser');
-const fs = require('fs')
+const fs = require('fs');
+
 const app = exp();
 
 let urlencodedParser = bp.urlencoded({ extended: false })
@@ -24,11 +25,21 @@ app.post('/formdata', urlencodedParser, function (req, res) {
         }
         res.writeHead(200, {'Content-Type': 'text/html'});
         res.write(data);
-        return res.end();
-      });
-    
-    
+        return res.end(data);
+      });  
   })
+
+app.get('/fruits', (req, res) => {
+    
+    fs.readFile('shop-list', function(err, data) {
+        if(err) {
+            throw err;
+        }
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        res.write(data);
+        return res.end();
+      });  
+})
 
 app.set('port', 3000);
 app.listen(app.get('port'), () => {

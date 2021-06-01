@@ -1,12 +1,10 @@
 const list = document.getElementById('list');
-
+let arr = []
 const getData = () =>{
-    fetch('http://localhost:3000/')
+    fetch('http://localhost:3000/fruits')
     .then(res => res.json())
     .then(data => console.log(data))
-    .catch(err => {
-      console.log(err)
-    });
+    .catch(err => `error is: ${err}`)
 } 
 
-console.log(getData())
+getData();  
