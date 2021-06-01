@@ -7,9 +7,10 @@ const app = exp();
 app.use(cors());
 
 app.get('/getCountries', function (req, res) {
-    // const countries = req.body
-    // res.send(countries)
-    res.send('ok')
+    DB.getCountries()
+    .then(data => {
+      res.send(data)
+    })
   })
 
 app.set('port', 3000)
