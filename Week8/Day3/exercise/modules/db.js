@@ -10,3 +10,11 @@ const db = knex({
         database: 'dvdrental'
     }
 })
+
+const getCountries = () => {
+    return db.select('*').from('country')
+}
+
+module.exports = {
+    getCountries
+}
