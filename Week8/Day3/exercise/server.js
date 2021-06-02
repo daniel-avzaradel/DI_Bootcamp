@@ -20,7 +20,7 @@ app.get('/getCities/:id', function (req, res) {
     })
   })
 
-app.set('port', 3000)
+app.set('port', 9000)
 app.listen(app.get('port'), () => {
     console.log(`listening to port ${app.get('port')}`)
 });
