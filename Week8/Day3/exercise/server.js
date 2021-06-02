@@ -13,6 +13,13 @@ app.get('/getCountries', function (req, res) {
     })
   })
 
+app.get('/getCities/:id', function (req, res) {
+    DB.getCities(req.params.id)
+    .then(data => {
+      res.send(data)
+    })
+  })
+
 app.set('port', 3000)
 app.listen(app.get('port'), () => {
     console.log(`listening to port ${app.get('port')}`)

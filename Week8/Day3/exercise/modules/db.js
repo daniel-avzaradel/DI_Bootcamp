@@ -15,11 +15,16 @@ const getCountries = () => {
     return db.select('*').from('country')
 }
 
+const getCities = (id) => {
+    return db.select('city_id', 'city').from('city').where({country_id:id}).orderBy('city')
+}
+
 getCountries()
 .then(data => {
     console.log(data);
 })
 
 module.exports = {
-    getCountries
+    getCountries,
+    getCities
 }
