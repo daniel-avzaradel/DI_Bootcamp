@@ -40,8 +40,10 @@ class Parent extends Component {
         </div>
         <div id="prev">Before the update the favorite was </div>
         <div id="after">The updated favorite is</div>
-    
+
+        <div>
         <p>{this.state.show ? <Child /> : null}</p>
+        </div>
         <button
           onClick={() => {
             this.setState({ show: !this.state.show });
@@ -62,9 +64,9 @@ class Child extends React.Component {
 
     render() {
       return(
-        <>
-        <header><strong>Hello World</strong></header>
-        </>
+        <div>
+        <h1><strong>Hello World</strong></h1>
+        </div>
       )
     }
 
