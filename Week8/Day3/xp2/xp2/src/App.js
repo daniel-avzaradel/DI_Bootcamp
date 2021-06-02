@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class App extends React.Component {
+class Parent extends Component {
   constructor(){
     super();
     this.state = {
       favoriteColor: 'red',
+      show: true
     }
   }
 
@@ -40,19 +41,20 @@ class App extends React.Component {
         <div id="prev">Before the update the favorite was </div>
         <div id="after">The updated favorite is</div>
     
-        <Child />
+        <p>{this.state.show ? <Child /> : null}</p>
+        <button
+          onClick={() => {
+            this.setState({ show: !this.state.show });
+          }}
+        >
+          Click me to toggle
+        </button>
       </>
     )
   }
 }
 
 class Child extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-        show: true
-      }
-    }
 
     componentWillUnmount() {
       alert('The component named Header is about to be unmounted')
@@ -68,4 +70,4 @@ class Child extends React.Component {
 
   }
 
-export default App;
+export default Parent;
