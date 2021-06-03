@@ -39,7 +39,7 @@ import React from 'react';
     class BuggyCounter extends React.Component {
         constructor(props) {
             super(props);
-            this.state = {counter: 0};
+            this.state = { counter: 0 };
             this.handleClick = this.handleClick.bind(this);
         }
 
@@ -49,15 +49,13 @@ import React from 'react';
             }));
         }
 
-        render(){
-                if(this.state.counter === 5) {
-                    throw new Error('Cashed Application')
-                }
-                return (
-                    <h1 onClick={this.handleClick()}>{this.state.counter}</h1>
-                )
+        render() {
+            if (this.state.counter === 5) {
+                throw new Error('Crashed Application');
+            }
+            return <h1 onClick={this.handleClick}>{this.state.counter}</h1>
         }
-   }
+    };
 
     function App() {
         return(
@@ -71,20 +69,18 @@ import React from 'react';
                 {/* Simulation 1 */}
                 <ErrorBoundary>
                     <p>These two counters are inside the same error boundary. If one crashes, the error boundary will replace both of them.</p>
-                    <BuggyCounter /><br/>
-                    <BuggyCounter /><br/>
+                    <BuggyCounter />
+                    <BuggyCounter />
                 </ErrorBoundary>
                 <hr/>
                 {/* Simulation 2 */}
                 <ErrorBoundary>
                     <p>These two counters are each inside of their own error boundary. So if one crashes, the other is not affected.</p>
                     <BuggyCounter />
-                <ErrorBoundary>
-                <br/>
                 </ErrorBoundary>
+                <ErrorBoundary>
                     <BuggyCounter />
                 </ErrorBoundary>
-                <br/>
                 <hr/>
                 {/* Simulation 3 */}
                     <p>This counter is not inside of boundary. So if crashes, all other components are deleted.</p>
