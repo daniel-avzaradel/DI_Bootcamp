@@ -1,3 +1,3 @@
 ## Random Quotes React App
 
-<img src="./img/fullpage.png">
+<img src="./quotes01.png">
