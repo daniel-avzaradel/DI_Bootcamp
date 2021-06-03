@@ -9,11 +9,13 @@ export default class QuotesComponent extends React.Component {
         }
         return(
             <div style={{ backgroundColor: 'white '}} className="box">
-                <div className="quoteBox" style={{ color: this.props.displayColor, fontWeight: 'bold', fontSize: "30px" }}>"{this.props.randomQuote.quote}"</div>
+                <div className="quoteBox">
+                <div style={{ color: this.props.displayColor, fontWeight: 'bold', fontSize: "30px" }}>"{this.props.randomQuote.quote}"</div>
                 <br/>
                 <div style={{ color: this.props.displayColor, fontWeight: 'bold', textAlign: 'right', fontSize: "18px" }}>- {this.props.randomQuote.author}</div>
                 <br/>
-                <button style={{padding: '6px 12px', borderRadius: '6px', color: 'white', backgroundColor: this.props.displayColor}} onClick={() => this.props.handleClick()}>New Quote</button>
+                </div>
+                <button className="quotebtn" style={{color: 'white', backgroundColor: this.props.displayColor}} onClick={() => this.props.handleClick()}>New Quote</button>
             </div>
         )
     }

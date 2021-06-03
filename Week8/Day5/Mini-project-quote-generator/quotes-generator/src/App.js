@@ -31,7 +31,6 @@ class App extends React.Component {
 
     handleClick() {
       this.randomQuote();
-      console.log(this.state.random)
     }
 
     render() {
