@@ -10,12 +10,14 @@ class App extends React.Component {
         quotesList: quotes,
         random: 0
       };
+      this.randomQuote = this.randomQuote.bind(this);
+      this.handleClick = this.handleClick.bind(this);
     }
 
     randomQuote() {
-      const random = Math.floor(Math.random() * this.state.quotesList.length);
-      console.log(quotes[random])
-      return quotes[random];
+      const randomNumber = Math.floor(Math.random() * this.state.quotesList.length);
+      this.setState({random: randomNumber})
+      return randomNumber
     }
     
     randomColor() {
@@ -28,21 +30,22 @@ class App extends React.Component {
     }
 
     handleClick() {
+      this.randomQuote();
       console.log(this.state.random)
     }
 
     render() {
       const randomColor = this.randomColor();
-      const {quotesList} = this.state
+      const {quotesList, random} = this.state
+      const randomQuote = quotesList[random];
 
       return(
         <div>
           <QuotesComponent
           displayColor={randomColor}
           handleClick={this.handleClick}
-          randomQuote={quotesList}
+          randomQuote={randomQuote}
           />
-          <button onClick={this.handleClick()}>CLICK HERE</button>
         </div>
       )
     }
