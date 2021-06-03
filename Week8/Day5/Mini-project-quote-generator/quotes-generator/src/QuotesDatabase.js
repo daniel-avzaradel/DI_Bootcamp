@@ -283,4 +283,4 @@ const quotes=[
 	"author": "John Pierrakos"
 	}
 ]
-export default quotes
+export default quotes;
