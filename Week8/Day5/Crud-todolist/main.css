@@ -19,3 +19,26 @@ input[type='submit'], button, [aria-label] {
     margin: auto;
     margin-top: 10px;
 }
+
+table {
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+th, h3 {
+    text-align:center;
+}
+
+td {
+    background-color: aliceblue;
+    padding-right: 10px;
+    text-align: left;
+    margin: auto;
+}
+
+.to-do {
+    background-color: transparent !important;
+    text-align: center;
+    margin: auto;
+}
