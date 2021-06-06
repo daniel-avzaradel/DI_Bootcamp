@@ -17,8 +17,31 @@ class App extends React.Component {
       this.setState({heroes: superheroes.superheroes})
   }
 
-  handleClick = () => {
-    console.log('click')
+  handleClick = (id) => {
+    const {heroes, score} = this.state;
+    const hero = heroes.find(item => {
+      return item.id === id;
+    })
+    if(hero.clicked === true) {
+      // reset the game
+
+    } else {
+      hero.clicked = true;
+      this.setState({
+        score: ++score,
+        heroes: this.shuffle([...heroes])
+      })
+    }
+  }
+
+  shuffle = (array) => {
+    for(let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i+1));
+      // let t = array[i];
+      // array[i] = array[j];
+      // array[j] = t;
+      [array[i], array[j]] = [array[j], array[i]]
+    }
   }
 
   render() {
