@@ -23,6 +23,7 @@ class App extends React.Component {
   onSubmitForm(event) {
     event.preventDefault();
     console.log(this.state)
+    document.getElementById('success').style.display = 'block';
   }
 
   render() {
@@ -37,7 +38,7 @@ class App extends React.Component {
           <input type="number" placeholder="Year Published" name="year" value={this.state.year} onChange={this.onInputChange} />
           <br/>
           <button type="submit" value="Submit" onClick={this.onSubmitForm}>Submit</button>
-          <p style={{color: 'green'}}>Form sent successfully!</p>
+          <p id="success" style={{color: 'green'}}>Form sent successfully!</p>
         </form>
       </div>
     );
