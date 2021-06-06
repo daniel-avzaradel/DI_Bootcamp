@@ -13,6 +13,7 @@ class UserForm extends React.Component {
     };
     this.onInputChange = this.onInputChange.bind(this);
     this.onSubmitUserForm = this.onSubmitUserForm.bind(this);
+    this.onReset = this.onReset.bind(this);
   }
 
   onInputChange(event) {
@@ -27,6 +28,16 @@ class UserForm extends React.Component {
         submit: true
     })
     console.log(this.state)
+  }
+
+  onReset() {
+    this.setState({
+        fname: '',
+        lname: '',
+        phone: '',
+        email: '',
+        submit: false
+    })
   }
 
   render() {
@@ -52,9 +63,9 @@ class UserForm extends React.Component {
             <>
             <div className="userdata">
             <h3>{this.state.lname}, {this.state.fname}</h3>
-            <p>{this.state.phone} | {this.state.email}</p>
+            <p style={{padding: '0 6px'}}>{this.state.phone} | {this.state.email}</p>
             <br/>
-            <button>Reset</button>
+            <button onClick={this.onReset}>Reset</button>
             </div>
             </>
         )
