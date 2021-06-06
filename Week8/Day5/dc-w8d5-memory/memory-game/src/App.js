@@ -1,6 +1,7 @@
 import React from 'react';
 import superheroes from './superheroes.json';
-import Hero from './components/Hero'
+import Hero from './components/Hero';
+import Nav from './components/Nav'
 
 class App extends React.Component {
   constructor() {
@@ -18,17 +19,25 @@ class App extends React.Component {
   }
 
   handleClick = (id) => {
-    const {heroes, score} = this.state;
+    let {heroes, score, top_score} = this.state;
     const hero = heroes.find(item => {
       return item.id === id;
     })
     if(hero.clicked === true) {
       // reset the game
+      if(score > top_score) {
+          this.setState({
+            top_score: score
+          })
+      }
+      this.setState({
+        score: 0
+      })
 
     } else {
       hero.clicked = true;
       this.setState({
-        score: ++score,
+        score: score++,
         heroes: this.shuffle([...heroes])
       })
     }
@@ -47,6 +56,8 @@ class App extends React.Component {
   render() {
     const { heroes, score, top_score } = this.state
     return (
+      <>
+      <Nav {...this.state} />
       <div className='herolist'>
         {
           heroes.map((item, i) => {
@@ -54,6 +65,7 @@ class App extends React.Component {
           })
         }
       </div>
+      </>
     );
   }
 }
