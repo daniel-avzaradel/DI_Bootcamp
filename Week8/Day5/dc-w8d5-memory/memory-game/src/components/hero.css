@@ -12,6 +12,13 @@
     box-shadow: 0 12px 24px #999, 0 12px 24px #999;
 }
 
-.herolist {
-    
+.hero-content {
+    text-align: center;
 }
+
+.herolist {
+    display: grid;
+    grid-template-columns: repeat(6, 15%);
+    grid-gap: 10px;
+    width: 100%;
+  }

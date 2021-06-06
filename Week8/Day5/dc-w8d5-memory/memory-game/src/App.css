@@ -36,10 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.herolist {
-  display: grid;
-  grid-template-columns: repeat(6, 15%);
-  grid-gap: 10px;
-  width: 100%;
-}

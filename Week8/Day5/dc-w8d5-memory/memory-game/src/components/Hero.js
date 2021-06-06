@@ -1,15 +1,19 @@
 import React from 'react';
-import './Hero.css';
+import './hero.css';
 
-const Hero = ({hero}) => {
+const Hero = ({hero, handleClick}) => {
     const {name, occupation, image, id} = hero;
-
     return (
         <div>
-            <div>
-                <img src={image}/>
-                <h4>{name}</h4>
-                <p>{occupation}</p>
+            <div className='hero' style={{backgroundImage: `url(${image})`}}
+            onClick={() => handleClick(id)}>
+            </div>
+
+            <div className='hero-content'>
+                <p>{name}
+                <br/>
+                {occupation}
+                </p>
             </div>
         </div>
     )

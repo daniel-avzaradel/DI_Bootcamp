@@ -5,6 +5,8 @@ import Hero from './components/Hero'
 class App extends React.Component {
   constructor() {
     super();
+    console.log(superheroes)
+
     this.state = {
         heroes: [],
         score: 0,
@@ -15,17 +17,20 @@ class App extends React.Component {
       this.setState({heroes: superheroes.superheroes})
   }
 
+  handleClick = () => {
+    console.log('click')
+  }
+
   render() {
     const { heroes, score, top_score } = this.state
     return (
-      <>
+      <div className='herolist'>
         {
           heroes.map((item, i) => {
-            <Hero hero={item} key={i}
-        />
+            return <Hero handleClick={this.handleClick} hero={item} key={i}/>
           })
         }
-      </>
+      </div>
     );
   }
 }
