@@ -5,13 +5,14 @@ class UserForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: '',
-      author: '',
-      genre: '',
-      year: ''
+      fname: '',
+      lname: '',
+      phone: '',
+      email: '',
+      submit: false
     };
     this.onInputChange = this.onInputChange.bind(this);
-    this.onSubmitForm = this.onSubmitForm.bind(this);
+    this.onSubmitUserForm = this.onSubmitUserForm.bind(this);
   }
 
   onInputChange(event) {
@@ -20,30 +21,45 @@ class UserForm extends React.Component {
     })
   }
 
-  onSubmitForm(event) {
+  onSubmitUserForm(event) {
     event.preventDefault();
+    this.setState({
+        submit: true
+    })
     console.log(this.state)
-    document.getElementById('success').style.display = 'block';
   }
 
   render() {
-
-    return (
-      <div>
-        <h1 id="welcome">WELCOME!</h1>
-        <p style={{padding: '0 6px'}}>Please provide your information bellow.</p>
-        <br/>
-        <form className="form" onSubmit={this.handleSubmit}>
-          <input type="text" placeholder="Title" name="title" value={this.state.title} onChange={this.onInputChange} />
-          <input type="text" placeholder="Author" name="author" value={this.state.author} onChange={this.onInputChange} />
-          <input type="text" placeholder="Genre" name="genre" value={this.state.genre} onChange={this.onInputChange} />
-          <input type="number" placeholder="Year Published" name="year" value={this.state.year} onChange={this.onInputChange} />
-          <br/>
-          <button type="submit" value="Submit" onClick={this.onSubmitForm}>Submit</button>
-          <p id="success" style={{color: 'green'}}>Form sent successfully!</p>
-        </form>
-      </div>
-    );
+    if(!this.state.submit) {
+        return (
+            <div>
+              <h1 id="welcome">WELCOME!</h1>
+              <p style={{padding: '0 6px'}}>Please provide your information bellow.</p>
+              <br/>
+              <form className="form" onSubmit={this.handleSubmit}>
+                <input type="text" placeholder="First Name" name="fname" value={this.state.fname} onChange={this.onInputChange} />
+                <input type="text" placeholder="Last Name" name="lname" value={this.state.lname} onChange={this.onInputChange} />
+                <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxLength="10" placeholder="Phone Number" name="phone" value={this.state.phone} onChange={this.onInputChange} />
+                <input type="email" placeholder="Email Address" name="email" value={this.state.email} onChange={this.onInputChange} />
+                <br/>
+                <button type="submit" value="Submit" onClick={this.onSubmitUserForm}>Submit</button>
+              </form>
+            </div>
+          );
+    }
+    else {
+        return (
+            <>
+            <div className="userdata">
+            <h3>{this.state.lname}, {this.state.fname}</h3>
+            <p>{this.state.phone} | {this.state.email}</p>
+            <br/>
+            <button>Reset</button>
+            </div>
+            </>
+        )
+    }
+    
   }
 }
 
