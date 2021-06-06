@@ -1,0 +1,29 @@
+#welcome {
+    padding: 6px;
+    margin: 10px;
+    color: darkgreen
+  }
+  
+  .form {
+    padding: 10px;
+    background-color: #f2f2f2;
+    display: block;
+  }
+  
+  .form input {
+    display: block;
+    padding: 6px;
+    margin: 10px;
+    outline: none;
+    border: 1px solid #888;
+  }
+  
+  button {
+    padding: 6px 12px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+  
+  p {
+    margin: 10px;
+  }

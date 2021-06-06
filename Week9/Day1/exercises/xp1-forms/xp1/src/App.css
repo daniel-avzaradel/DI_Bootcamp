@@ -62,7 +62,7 @@ button {
   cursor: pointer;
 }
 
-p {
+#success {
   margin: 4px 10px;
   display: none;
 }
