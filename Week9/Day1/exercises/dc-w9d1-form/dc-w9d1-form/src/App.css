@@ -50,7 +50,7 @@
 
 div.p-3 {
   width: 400px;
-  max-height: 400px;
+  max-height: auto;
   margin: 40px auto 0 auto;
   background-color: #f2f2f2;
   border: 1px solid #ccc;
@@ -75,7 +75,11 @@ input {
   padding: 8px;
   border-radius: 0 0 10px 10px;
   border: 1px solid rgb(252, 224, 155);
-  z-index: 2;
+}
+
+.list {
+  overflow-y: scroll;
+  max-height: 400px;
 }
 
 #suggestions p {

@@ -34,7 +34,9 @@ export default class AutoCompletedText extends React.Component {
                 <p>by: Daniel Avzaradel</p>
                 <input type="text" onChange={this.handleChange} value={text}/>
                 <hr/>
-                <Country text={text} countries={filtered}/>
+                <div className="list">
+                <Country text={text} countries={filtered} className="list"/>
+                </div>
             </div>
 
             <div id="suggestions">
@@ -50,11 +52,11 @@ const Country = ({countries}) => {
     return(
         <>{countries.map((item, i) => {
             return(
-                <>
-                <div className="country" key={i}>
+                <div key={i}>
+                <div className="country">
                 {item}
                 </div>
-                </>
+                </div>
             )
         })}
         </>    
