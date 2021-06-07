@@ -22,37 +22,33 @@ const ProfileScreen = () => {
 }
 
 const ShopScreen = (props) => {
-  
-  const error = props;
-  console.log(error)
-
-    return(
-      <>
-      <h1>Shop Screen</h1>
-      </>
-    )
-  }
+  console.log({error})
+  return(
+    <h1>Shop Screen</h1>
+  )
+}
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      error: false
+        error: false
     }
   }
 
-  handleClick() {
-      this.setState({error: true})
+  onClick() {
+    this.setState({error: true})
   }
 
   render() {
     const {error} = this.state;
+
     return (
       <Router>
         <Navbar bg="light" expand="lg">
           <NavLink className="btn mr-3" to='/'>Home</NavLink>
           <NavLink className="btn mr-3" to='/profile'>Profile</NavLink>
-          <NavLink className="btn mr-3" error={error} onClick={() => this.handleClick()} to='/shop'>Shop</NavLink>
+          <NavLink className="btn mr-3" error={error} onClick={() => this.onClick()} to='/shop'>Shop</NavLink>
         </Navbar>  
         <hr/>
         <Switch>
@@ -69,7 +65,7 @@ class App extends React.Component {
           <Route path="/shop">
           <ErrorBoundary>
             <ShopScreen />
-            </ErrorBoundary>
+          </ErrorBoundary>
           </Route>
         </Switch>
       </Router>

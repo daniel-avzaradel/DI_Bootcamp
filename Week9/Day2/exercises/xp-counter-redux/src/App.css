@@ -36,28 +36,3 @@
     transform: rotate(360deg);
   }
 }
-
-.form {
-  background-color: rgb(198, 226, 235);
-  padding: 10px;
-}
-
-input {
-  padding: 4px 8px;
-  display: block;
-  border: none;
-  outline: none;
-  background-color: #f2f2f2;
-}
-
-p {
-  margin: 10px;
-}
-
-button {
-  padding: 4px 12px;
-  color: white;
-  background-color: dodgerblue;
-  border: none;
-  outline: none;
-}
