@@ -7,7 +7,8 @@ export default class AutoCompletedText extends React.Component {
         super(props);
         this.state = {
           suggestions: [],
-          text: ''
+          text: '',
+          current: ''
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleClick = this.handleClick.bind(this);
@@ -22,9 +23,8 @@ export default class AutoCompletedText extends React.Component {
     }
 
     handleClick(event) {
-        const input = document.getElementById('input')
-        input.value = event.target.innerText;
-    
+        const {text} = this.state;
+        this.setState({text: event.target.innerText})
     }
 
     render() {
