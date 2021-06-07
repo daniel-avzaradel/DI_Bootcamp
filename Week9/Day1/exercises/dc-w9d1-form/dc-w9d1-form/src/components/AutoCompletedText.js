@@ -6,14 +6,25 @@ export default class AutoCompletedText extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-          suggestions: countries,
+          suggestions: [],
           text: ''
         }
         this.handleChange = this.handleChange.bind(this);
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    componentDidMount() {
+        this.setState({suggestions: countries})
     }
 
     handleChange(event) {
         this.setState({text: event.target.value.toLowerCase()})
+    }
+
+    handleClick(event) {
+        const input = document.getElementById('input')
+        input.value = event.target.innerText;
+    
     }
 
     render() {
@@ -32,10 +43,16 @@ export default class AutoCompletedText extends React.Component {
             <div className="p-3 text-center">
                 <h3>Auto Completed</h3>
                 <p>by: Daniel Avzaradel</p>
-                <input type="text" onChange={this.handleChange} value={text}/>
+                <input type="text" onChange={this.handleChange} value={text} id="input"/>
                 <hr/>
                 <div className="list">
-                <Country text={text} countries={filtered} className="list"/>
+                <>{filtered.map((item, i) => {
+                return(
+                    <Country text={text} name={item} countries={filtered} className="list" key={i}
+                    handleClick={this.handleClick} />
+                    )
+                })}
+                </>  
                 </div>
             </div>
 
@@ -47,18 +64,15 @@ export default class AutoCompletedText extends React.Component {
     }
 }
 
-const Country = ({countries}) => {
-   console.log(countries);
+const Country = (props) => {
+    const {handleClick} = props;
     return(
-        <>{countries.map((item, i) => {
-            return(
-                <div key={i}>
-                <div className="country">
-                {item}
-                </div>
-                </div>
-            )
-        })}
+        <>
+            <div>
+            <div className="country" onClick={handleClick}>
+            {props.name}
+            </div>
+            </div>
         </>    
-    )
-}
+        )
+    }
