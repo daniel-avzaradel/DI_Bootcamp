@@ -1,10 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import MovieDetails from './components/MovieDetails'
+import MovieList from './components/MovieList'
 
 function App() {
   return (
-    <div>
-        <h1>MovieList</h1>
+    <div className="App">
+      <MovieList />
+      <MovieDetails />
     </div>
   );
 }

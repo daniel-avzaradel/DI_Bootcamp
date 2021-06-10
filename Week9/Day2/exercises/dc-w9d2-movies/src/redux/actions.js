@@ -12,3 +12,10 @@ export const initMovies = () => {
         payload: api
     }
 }
+
+export const movieDetails = (val) => {
+    return {
+        type: 'MOVIE_SELECTED',
+        payload: val
+    }
+}
