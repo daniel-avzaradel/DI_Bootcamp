@@ -1,5 +1,5 @@
 export const INIT_MOVIE = 'INIT_MOVIE';
-export const MOVIE_SELECTED = 'MOVIE_SELECTED'
+export const MOVIE_SELECTED = 'MOVIE_SELECTED';
 
 export const initMovies = () => {
     const api = [
@@ -15,6 +15,7 @@ export const initMovies = () => {
         payload: api
     }
 }
+
 
 export const movieDetails = (val) => {
     return {

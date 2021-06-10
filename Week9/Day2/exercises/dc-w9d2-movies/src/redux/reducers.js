@@ -32,5 +32,5 @@ const movieDetails = (state = initMoviesDetails, action = {}) => {
 
 export const reducer = combineReducers({
     initMovies,
-    movieDetails
+    movieDetails,
 })

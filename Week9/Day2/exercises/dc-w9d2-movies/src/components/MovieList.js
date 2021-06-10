@@ -33,14 +33,14 @@ class MovieList extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        movies: state.initMovies.movies
+        movies: state.initMovies.movies,
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
         initMovies: () => dispatch(initMovies()),
-        movieDetails: (param) => dispatch(movieDetails(param))
+        movieDetails: (param) => dispatch(movieDetails(param)),
     }
 }
 
