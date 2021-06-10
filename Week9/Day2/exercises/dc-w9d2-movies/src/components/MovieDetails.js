@@ -15,7 +15,7 @@ const MovieDetails = (props) => {
 
 const mapStateToProps = (state) => {
     return {
-        details: state.details
+        details: state.movieDetails.details
     }
 }
 

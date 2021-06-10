@@ -1,3 +1,6 @@
+export const INIT_MOVIE = 'INIT_MOVIE';
+export const MOVIE_SELECTED = 'MOVIE_SELECTED'
+
 export const initMovies = () => {
     const api = [
         {title: 'Spider-Man: Homecoming', releaseDate: '05-07-2017', rating: 7.4,},
@@ -8,14 +11,14 @@ export const initMovies = () => {
     ]
 
     return {
-        type: 'INIT_MOVIE',
+        type: INIT_MOVIE,
         payload: api
     }
 }
 
 export const movieDetails = (val) => {
     return {
-        type: 'MOVIE_SELECTED',
+        type: MOVIE_SELECTED,
         payload: val
     }
 }
