@@ -1,11 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import './App.css';
 
-// const [state, setState] = useState(0)
 
 const App = () => {
   const [counter, setCounter] = useState(0);
   const [name, setName] = useState('');
+  const inputRef = useRef();
+
+  useEffect(() => {
+    console.log('inputRef: ', inputRef.current.value)
+  })
 
   return(
     <div className="App-header">
@@ -13,7 +17,7 @@ const App = () => {
         <h2>{counter}</h2>
         <button onClick={() => setCounter(counter+1)}>Add</button>
         <h2>My name is: {name}</h2>
-        <input type="text" onChange={(event) => setName(event.target.value)} />
+        <input ref={inputRef} type="text" onChange={(event) => setName(event.target.value)} />
       </div>
   )
 }
