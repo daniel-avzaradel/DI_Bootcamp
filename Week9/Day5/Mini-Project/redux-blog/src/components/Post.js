@@ -3,18 +3,22 @@ import React from 'react';
 class Post extends React.Component {
     constructor() {
         super();
-        this.state = {}
+        this.state = {
+            id: null
+        }
     }
 
     componentDidMount() {
-        console.log(this.props.match.params.post_id);
         let id = this.props.match.params.post_id
+        this.setState({
+            id: id
+        })
     }
 
     render() {
         return(
             <div className="container">
-                <h4>Route Param</h4>
+                <h4>{this.state.id}</h4>
             </div>
         )
     }
