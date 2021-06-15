@@ -1,2 +1,2 @@
-[{"name":"Kevin","lname":"Connor","email":"daniel.avzaradel@gmail.com","username":"danielav","password":"123"}]
-[{"name":"Daniel","lname":"Avzaradel","email":"daniel.avzaradel@gmail.com","username":"danielav1","password":"123"}][{"name":"Kevin","lname":"Connor","email":"daniel.avzaradel@gmail.com","username":"danielav","password":"123"}]
+[{"name":"Daniel","lname":"Avzaradel","email":"daniel.avzaradel@gmail.com","username":"danielav","password":"123"}]
+[{"name":"Kevin","lname":"Connor","email":"kevin@gmail.com","username":"kevinc","password":"1234"}]

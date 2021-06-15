@@ -8,8 +8,8 @@ app.use(bp.json())
 app.use('/', exp.static(__dirname+'/public'));
 
 app.post('/registered', (req, res) => {
-    console.log(req.body)
-    console.log('listening...123')
+   
+    
     let file = './users.txt';
 	let list = [];
 	try {
@@ -22,6 +22,13 @@ app.post('/registered', (req, res) => {
 		// console.log(list);
 		fs.appendFileSync(file,JSON.stringify(list))
 		res.send(true)
+})
+
+app.get('/logged', (req, res) => {
+    let file = './users.txt';
+    fs.readFileSync(file, data => {
+        console.log(data)
+    })
 })
 
 app.set('port', 3000)
