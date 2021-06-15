@@ -3,6 +3,8 @@ import './App.css';
 import Form from './components/Form'
 import TodoList from './components/TodoList'
 
+// https://www.youtube.com/watch?v=pCA4qpQDZD8 --> 43min mark
+
 function App() {
   const [inputText, setInputText] = useState('');
   const [todos, setTodos] = useState([])
