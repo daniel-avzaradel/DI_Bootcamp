@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(177, 31, 31);
+    box-shadow: 0 0 10px rgba(0,0,0,0.8);
+    color: white;
+    height: auto;
+}
+
+h2 {
+    color: white;
+}
+
+.nav-wrapper ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    color: white;
+    margin: 0;
+}
+
+ul li a, nav a {
+    margin: 0 10px;
+    color: white;
+}
+
+ul li a:hover, nav a {
+    color: #ccc;
+    text-decoration: none;
+}
+
