@@ -16,8 +16,7 @@ function App() {
     async function fetchData() {
       let response = await getAllPokemon(url);
       console.log(response);
-      loading = await loadingPokemon(response.results)
-      console.log(loading);
+      await loadingPokemon(response.results)
       setLoading(false)
     }
     fetchData();
@@ -26,9 +25,12 @@ function App() {
   const loadingPokemon = async (data) => {
     let _pokemonData = await Promise.all(data.map(async (pokemon) => {
         let pokemonRecord = await getPokemon(pokemon.url);
+        console.log(pokemonRecord);
         return pokemonRecord;
-      })
-    )}
+      }))
+      setPokemonData(_pokemonData)
+
+    }
 
   return (
 
