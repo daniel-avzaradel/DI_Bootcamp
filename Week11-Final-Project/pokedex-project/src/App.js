@@ -1,6 +1,8 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import Myteams from './components/Myteams';
+import Pokedex from './components/Pokedex'
 
 function App() {
   return (
@@ -20,18 +22,6 @@ function App() {
 const Home = () => {
   return(
     <h1>Home</h1>
-  )
-}
-
-const Pokedex = () => {
-  return(
-    <h1>Pokedex</h1>
-  )
-}
-
-const Myteams = () => {
-  return(
-    <h1>Myteams</h1>
   )
 }
 
