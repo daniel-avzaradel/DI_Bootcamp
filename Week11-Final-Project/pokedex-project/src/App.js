@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Myteams from './components/Myteams';
 import Pokedex from './components/Pokedex';
 import NotFound from './components/NotFound';
+import { getAllPokemon, getPokemon } from './services/pokemon'
 
 function App() {
   const [pokemonData, setPokemonData] = useState([])
@@ -13,22 +14,32 @@ function App() {
 
   useEffect(() => {
     async function fetchData() {
-      let response = await fetch(url)
-      let data = await response.json();
-      setPokemonData(data.results)
-      console.log(pokemonData);
+      let response = await getAllPokemon(url);
+      console.log(response);
+      loading = await loadingPokemon(response.results)
+      console.log(loading);
       setLoading(false)
     }
     fetchData();
   }, [])
 
+  const loadingPokemon = async (data) => {
+    let _pokemonData = await Promise.all(data.map(async (pokemon) => {
+        let pokemonRecord = await getPokemon(pokemon.url);
+        return pokemonRecord;
+      })
+    )}
+
   return (
+
     <div>
       <BrowserRouter>
         <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/pokedex' component={Pokedex} />
+          <Route path='/pokedex'>
+            <Pokedex/>
+          </Route>
           <Route exact path='/myteams' component={Myteams} />
           <Route component={NotFound} />
         </Switch>
