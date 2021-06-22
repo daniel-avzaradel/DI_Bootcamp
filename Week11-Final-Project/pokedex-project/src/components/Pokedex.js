@@ -1,20 +1,42 @@
 import React from 'react';
 
-const Pokedex = ({pokemon}) => {
-    return(
-        <>
-        <div>
-            <h2>Pokedex Entry</h2>
-        </div>
-        <div className="grid-container">
-        {
-            pokemon.map((item, i) => {
-                return <Pokemon key={i} pokemon={item} />
-            })
+class Pokedex extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+
         }
-        </div>
-        </>
-    )
+    }
+
+
+
+    render() {
+        return(
+            <>
+                {
+                    this.props.loading ? (
+                        <>
+                        <h1>Loading...</h1>
+                        </>
+                    ) : (
+                        <>
+                        <div className="search">
+                <input type="text" placeholder="Search" /><i class="fas fa-search"></i>
+            </div>
+            <div className="grid-container">
+            {
+                this.props.pokemon.map((item, i) => {
+                    return <Pokemon key={i} pokemon={item} />
+                })
+            }
+            </div>
+                        </>
+                    )
+                }
+            </>
+        )
+    }
+    
 }
 
 const Pokemon = (item) => {

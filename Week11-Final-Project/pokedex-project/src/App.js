@@ -9,14 +9,14 @@ import { getAllPokemon, getPokemon } from './services/pokemon'
 
 function App() {
   const [pokemonData, setPokemonData] = useState([])
-  const [loading, setLoading] = useState(true)
+  // const [loading, setLoading] = useState(true)
   const url = 'https://pokeapi.co/api/v2/pokemon?limit=151'
 
   useEffect(() => {
     async function fetchData() {
       let response = await getAllPokemon(url);
       await loadingPokemon(response.results)
-      setLoading(false)
+      // setLoading(false)
     }
     fetchData();
   }, [])
@@ -37,7 +37,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/pokedex'>
-            <Pokedex pokemon={pokemonData}/>
+            <Pokedex pokemon={pokemonData} loading={loading} />
           </Route>
           <Route exact path='/myteams' component={Myteams} />
           <Route component={NotFound} />
