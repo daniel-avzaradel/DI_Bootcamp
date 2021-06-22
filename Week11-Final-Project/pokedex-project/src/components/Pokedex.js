@@ -1,35 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class Pokedex extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            search: ''
-        }
-    }
 
-    handleChange(e) {
-        console.log(e.target.value);
-    }
+const Pokedex = ({pokemon}) => {
+    const [search, setSearch] = useState('')
 
-    render() {
-        return(
-            <>
-            <div className="search">
-                <input type="text" placeholder="Search" onChange={this.handleChange} /><i class="fas fa-search"></i>
-            </div>
-            <div className="grid-container">
-            {
-                this.props.pokemon.map((item, i) => {
+    return(
+        <>
+        <div className="search">
+            <input type="text" placeholder="Search" onChange={(event) => {setSearch(event.target.value)}} /><i class="fas fa-search"></i>
+        </div>
+        <div className="grid-container">
+        {
+            pokemon.filter((item, i) => {
+                if(search == '') {
                     return <Pokemon key={i} pokemon={item} />
-                })
-            }
-            </div>
-            </>
-        )
-    }
-    
+                } else if (item.name.toLowerCase().includes(search.toLocaleLowerCase())) {
+                    return <Pokemon key={i} pokemon={item} />
+                }
+            })
+            .map((item, i) => {
+                return <Pokemon key={i} pokemon={item} />
+            })
+        }
+
+        {/* {
+            pokemon.map((item, i) => {
+                return <Pokemon key={i} pokemon={item} />
+            })
+        } */}
+        </div>
+        </>
+    )
 }
+        
 
 const Pokemon = (item) => {
     return(
@@ -79,5 +82,6 @@ const TYPE_COLORS = {
     steel: '#C2C0D8',
     water: '#56AEFF',
 }
+
 
 export default Pokedex;
