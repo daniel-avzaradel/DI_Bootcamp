@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import Myteams from './components/Myteams';
 import Pokedex from './components/Pokedex';
 import NotFound from './components/NotFound';
+import Home from './components/Home';
 import { getAllPokemon, getPokemon } from './services/pokemon'
 
 function App() {
@@ -45,12 +46,6 @@ function App() {
       </BrowserRouter>
     </div>
   );
-}
-
-const Home = () => {
-  return(
-    <h1>Home</h1>
-  )
 }
 
 export default App;
