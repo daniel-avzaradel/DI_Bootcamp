@@ -4,24 +4,19 @@ class Pokedex extends React.Component {
     constructor() {
         super();
         this.state = {
-
+            search: ''
         }
     }
 
-
+    handleChange(e) {
+        console.log(e.target.value);
+    }
 
     render() {
         return(
             <>
-                {
-                    this.props.loading ? (
-                        <>
-                        <h1>Loading...</h1>
-                        </>
-                    ) : (
-                        <>
-                        <div className="search">
-                <input type="text" placeholder="Search" /><i class="fas fa-search"></i>
+            <div className="search">
+                <input type="text" placeholder="Search" onChange={this.handleChange} /><i class="fas fa-search"></i>
             </div>
             <div className="grid-container">
             {
@@ -30,9 +25,6 @@ class Pokedex extends React.Component {
                 })
             }
             </div>
-                        </>
-                    )
-                }
             </>
         )
     }
@@ -40,7 +32,6 @@ class Pokedex extends React.Component {
 }
 
 const Pokemon = (item) => {
-    console.log(item);
     return(
         <div className="card">
             <div className="card-img">
@@ -55,9 +46,9 @@ const Pokemon = (item) => {
             <br/>
             <div className="types">
             {
-                item.pokemon.types.map(type => {
+                item.pokemon.types.map((type, i) => {
                     return(
-                        <div className="type" style={{ backgroundColor: TYPE_COLORS[type.type.name]}}>
+                        <div className="type" style={{ backgroundColor: TYPE_COLORS[type.type.name]}} key={i}>
                             {type.type.name}
                         </div>
                     )

@@ -37,7 +37,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/pokedex'>
-            <Pokedex pokemon={pokemonData} loading={loading} />
+            <Pokedex pokemon={pokemonData} />
           </Route>
           <Route exact path='/myteams' component={Myteams} />
           <Route component={NotFound} />
