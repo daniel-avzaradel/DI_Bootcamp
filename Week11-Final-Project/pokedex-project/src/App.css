@@ -53,6 +53,7 @@ body {
   justify-content: space-around;
   align-items: center;
   height: auto;
+  padding: 10px;
 }
 
 .navbar h1 {
@@ -75,6 +76,11 @@ body {
 .li-link {
   color: white;
   text-decoration: none;
+  transition: 0.2s ease all;
+}
+
+.li-link:hover {
+  color: #333;
 }
 
 .navbar div {
