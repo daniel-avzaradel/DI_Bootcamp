@@ -15,7 +15,6 @@ function App() {
   useEffect(() => {
     async function fetchData() {
       let response = await getAllPokemon(url);
-      console.log(response);
       await loadingPokemon(response.results)
       setLoading(false)
     }
@@ -25,11 +24,9 @@ function App() {
   const loadingPokemon = async (data) => {
     let _pokemonData = await Promise.all(data.map(async (pokemon) => {
         let pokemonRecord = await getPokemon(pokemon.url);
-        console.log(pokemonRecord);
         return pokemonRecord;
       }))
       setPokemonData(_pokemonData)
-
     }
 
   return (
@@ -40,7 +37,7 @@ function App() {
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/pokedex'>
-            <Pokedex/>
+            <Pokedex pokemon={pokemonData}/>
           </Route>
           <Route exact path='/myteams' component={Myteams} />
           <Route component={NotFound} />
