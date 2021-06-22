@@ -10,7 +10,7 @@ import { getAllPokemon, getPokemon } from './services/pokemon'
 function App() {
   const [pokemonData, setPokemonData] = useState([])
   const [loading, setLoading] = useState(true)
-  const url = 'https://pokeapi.co/api/v2/pokemon'
+  const url = 'https://pokeapi.co/api/v2/pokemon?limit=151'
 
   useEffect(() => {
     async function fetchData() {
