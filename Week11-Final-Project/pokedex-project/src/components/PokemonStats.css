@@ -71,9 +71,9 @@ button {
 }
 
 .bar {
-    background-color: rgb(40, 194, 78);
     height: 12px;
     margin: 4px 0;
-    border: 1px solid green;
-    border-radius: 2px;
+    border: 1px solid #888;
+    background-color: rgb(39, 184, 39);
+    border-radius: 4px;
 }

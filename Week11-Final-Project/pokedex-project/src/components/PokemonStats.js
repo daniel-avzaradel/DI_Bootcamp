@@ -11,7 +11,6 @@ const PokemonStats = (props) => {
         }
     })
     let total = 0;
-
     
     return(
         <div className="box">
@@ -52,12 +51,30 @@ const PokemonStats = (props) => {
                             {
                                 pokemon[0].stats.map(item => {
                                     total = total + item.base_stat;
+                                    let progressColor = '';
+                                    let progress = (item) => {
+                                        
+                                        if(item.base_stat < 60) {
+                                            return progressColor = 'orangered'
+                                        } else if (item.base_stat >= 60 && item.base_stat < 90) {
+                                            return progressColor = 'gold'
+                                        } else if (item.base_stat >= 90 && item.base_stat < 120) {
+                                            return progressColor = 'yellowgreen'
+                                        } else if (item.base_stat >= 120 && item.base_stat < 150) {
+                                            return progressColor = 'mediumseagreen'
+                                        } else if (item.base_stat >= 150 && item.base_stat < 180) {
+                                            return progressColor = 'darkturquoise'
+                                        }
+                                        
+                                    console.log(progressColor);
+                                    }
                                     return(
                                         <div className="stat">
                                             {item.stat.name}: 
                                             <span> {item.base_stat}                                            
                                                 <div className="bar" style={{
-                                                        width: item.base_stat * 4
+                                                        width: item.base_stat * 5,
+                                                        backgroundColor: progress(item)
                                                     }}>
                                                 </div> 
                                             </span>
