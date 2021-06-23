@@ -135,7 +135,7 @@ body {
 }
 
 .type {
-  margin: 2px;
+  margin: 0 4px;
   border-radius: 4px;
   padding: 0px 14px;
   display: flex;

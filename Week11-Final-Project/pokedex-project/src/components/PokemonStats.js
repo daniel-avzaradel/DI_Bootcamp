@@ -15,8 +15,8 @@ const PokemonStats = (props) => {
     return(
         <div className="box">
             <div className="poke-card">
-                <header>
-                <img src={pokemon[0].sprites.other.dream_world.front_default} alt="" style={{maxHeight: '10%', maxWidth: '25%', float: 'left'}} />
+                <header style={{backgroundColor: TYPE_COLORS[pokemon[0].types[0].type.name]}}>
+                <img src={pokemon[0].sprites.other.dream_world.front_default} alt="" style={{maxHeight: 'auto', maxWidth: '25%', float: 'left'}} />
                 <div className="data">
                     <h3>Pokemon Data</h3>
                     <hr />
@@ -26,18 +26,28 @@ const PokemonStats = (props) => {
                     <hr />
                     <div className="types">
                     <p><strong>Types: </strong></p>
-            {
-                pokemon[0].types.map((type, i) => {
-                    return(
-                        <div className="type" style={{ backgroundColor: TYPE_COLORS[type.type.name]}} key={i}>
-                            {type.type.name}
-                        </div>
-                    )
-                })
-            }
-            </div>
+                    {
+                        pokemon[0].types.map((type, i) => {
+                            return(
+                                <div className="type" style={{ backgroundColor: TYPE_COLORS[type.type.name]}} key={i}>
+                                    {type.type.name}
+                                </div>
+                            )
+                        })
+                    }
+                    </div>
+                    <hr />
+                    <p><strong>Height: </strong> <span>{(pokemon[0].height / 10).toFixed(1)}m</span></p>
+                    <hr />
+                    <p><strong>Weight: </strong> <span>{(pokemon[0].weight / 10).toFixed(1)}Kg</span></p>
+                    <hr />
                 </div>
                 </header>
+            </div>
+
+            <div className="btns">
+                <button className="prev">Previous</button>
+                <button className="next">Next</button>
             </div>
         </div>
     )

@@ -11,7 +11,7 @@ const Home = () => {
             <Link to='/pokedex'><button className="enter">ENTER</button></Link>
         </div>
         <footer>
-            All rights reserved. Pokedex WebApp was creaeted by Daniel Avzaradel for his Final Project at Developers Institute - JavaScript Full Stack DeveloperBootcamp
+            All rights reserved. Pokedex WebApp was created by Daniel Avzaradel for his Final Project at Developers Institute - JavaScript Full Stack DeveloperBootcamp
         </footer>
         </>
     )

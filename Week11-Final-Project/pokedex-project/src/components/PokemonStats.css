@@ -1,5 +1,6 @@
 .box {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -17,7 +18,6 @@ header {
     display: flex;
     border-radius: 20px 20px 0 0;
     padding: 40px;
-    background-color: white;
 }
 
 .data {
@@ -28,6 +28,7 @@ header {
     text-align: left;
     border: 1px solid #333;
     padding: 20px;
+    background-color: white;
 }
 
 .data h3 {
@@ -37,6 +38,7 @@ header {
 hr {
     width: 100%;
     margin: 6px;
+    opacity: 0.4;
 }
 
 strong, h3 {
@@ -44,4 +46,15 @@ strong, h3 {
 }
 span {
     color: #555;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    width: 160px;
+    background-color: rgb(176, 131, 228);
+    outline: none;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
