@@ -16,7 +16,7 @@ const PokemonStats = (props) => {
         <div className="box">
             <div className="poke-card">
                 <header style={{backgroundColor: TYPE_COLORS[pokemon[0].types[0].type.name]}}>
-                <img src={pokemon[0].sprites.other.dream_world.front_default} alt="" style={{maxHeight: 'auto', maxWidth: '25%', float: 'left'}} />
+                <img src={pokemon[0].sprites.other.dream_world.front_default} alt="" style={{maxHeight: 'auto', maxWidth: '20%', float: 'left'}} />
                 <div className="data">
                     <h3>Pokemon Data</h3>
                     <hr />
@@ -25,7 +25,7 @@ const PokemonStats = (props) => {
                     <p><strong>Pokedex Entry: </strong> <span>#{pokemon[0].id}</span></p>
                     <hr />
                     <div className="types">
-                    <p><strong>Types: </strong></p>
+                    <p><strong>Type: </strong></p>
                     {
                         pokemon[0].types.map((type, i) => {
                             return(

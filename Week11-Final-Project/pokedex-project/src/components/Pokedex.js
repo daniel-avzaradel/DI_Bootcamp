@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 
 const Pokedex = ({pokemon}) => {
     const [search, setSearch] = useState('')
-
+    console.log(pokemon);
     return(
         <>
         <div className="search">
