@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
-import { getPokemon } from '../services/pokemon'
 
 
 const Pokedex = ({pokemon}) => {
     const [search, setSearch] = useState('')
-
 
     return(
         <>

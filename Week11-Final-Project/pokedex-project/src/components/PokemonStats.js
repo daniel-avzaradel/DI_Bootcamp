@@ -5,14 +5,13 @@ import './PokemonStats.css';
 
 const PokemonStats = (props) => {
 
-    const {id} = useParams();
-    const url = `https://pokeapi.co/api/v2/pokemon/${id}`
-    const [poke, setPoke] = useState([])
+    const {id} = useParams()
+    const url = `https://pokeapi.co/api/v2/pokemon/`
+    const [poke, setPoke] = useState([]);
 
     async function fetchData() {
         let response = await getPokemon(url);
         setPoke(response)
-        console.log(response);
         return response;
         // await loadingPokemon(response.results)
     }
@@ -23,7 +22,6 @@ const PokemonStats = (props) => {
 
     useEffect(() => {
         fetchData();
-
       }, [])
 
     
