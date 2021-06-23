@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Link} from 'react-router-dom';
 
 
 const Pokedex = ({pokemon}) => {
@@ -12,22 +13,30 @@ const Pokedex = ({pokemon}) => {
         <div className="grid-container">
         {
             pokemon.filter((item, i) => {
-                if(search == '') {
-                    return <Pokemon key={i} pokemon={item} />
+                if(search === '') {
+                    return (
+                        <>
+                        <Pokemon key={pokemon.name} pokemon={item} />
+                        </>
+                    )
                 } else if (item.name.toLowerCase().includes(search.toLocaleLowerCase())) {
-                    return <Pokemon key={i} pokemon={item} />
+                    return (
+                        <>
+                        <Pokemon key={pokemon.name} pokemon={item} />
+                        </>
+                    )
                 }
             })
             .map((item, i) => {
-                return <Pokemon key={i} pokemon={item} />
+                return (
+                    <>
+                    <Link to={'/pokedex/'+item.name}>
+                        <Pokemon key={pokemon.name} pokemon={item} />
+                    </Link>
+                    </>
+                )
             })
         }
-
-        {/* {
-            pokemon.map((item, i) => {
-                return <Pokemon key={i} pokemon={item} />
-            })
-        } */}
         </div>
         </>
     )

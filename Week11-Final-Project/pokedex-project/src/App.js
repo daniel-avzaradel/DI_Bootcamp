@@ -6,18 +6,17 @@ import Myteams from './components/Myteams';
 import Pokedex from './components/Pokedex';
 import NotFound from './components/NotFound';
 import Home from './components/Home';
+import PokemonStats from './components/PokemonStats';
 import { getAllPokemon, getPokemon } from './services/pokemon'
 
 function App() {
-  const [pokemonData, setPokemonData] = useState([])
-  // const [loading, setLoading] = useState(true)
+  const [pokemonData, setPokemonData] = useState([]);
   const url = 'https://pokeapi.co/api/v2/pokemon?limit=151'
 
   useEffect(() => {
     async function fetchData() {
       let response = await getAllPokemon(url);
       await loadingPokemon(response.results)
-      // setLoading(false)
     }
     fetchData();
   }, [])
@@ -31,16 +30,18 @@ function App() {
     }
 
   return (
-
     <div>
       <BrowserRouter>
         <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route path='/pokedex'>
+          <Route exact path='/pokedex'>
             <Pokedex pokemon={pokemonData} />
           </Route>
-          <Route exact path='/myteams' component={Myteams} />
+          <Route path='/myteams' component={Myteams} />
+          <Route path='/pokedex/:name'>
+            <PokemonStats pokemon={pokemonData} />
+          </Route>
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>

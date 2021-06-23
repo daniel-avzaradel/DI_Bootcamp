@@ -42,6 +42,11 @@
   padding: 0;
 }
 
+a {
+  color: #222;
+  text-decoration: none;
+}
+
 body {
   background-color: #f2f2f2;
 }
@@ -114,7 +119,7 @@ body {
 
 .card:hover {
   background: rgb(147,117,20);
-background: linear-gradient(140deg, rgba(147,117,20,1) 9%, rgba(208,170,45,1) 47%, rgba(255,252,0,1) 100%);
+  background: linear-gradient(140deg, rgba(147,117,20,1) 9%, rgba(208,170,45,1) 47%, rgba(255,252,0,1) 100%);
   transform: scale(1.05);
   border: 1px solid #777;
   box-sizing: border-box;

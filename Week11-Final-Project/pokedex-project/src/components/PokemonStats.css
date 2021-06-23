@@ -1,0 +1,47 @@
+.box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poke-card {
+    background-color: #ccc;
+    min-width: 1000px;
+    min-height: 600px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.4);
+    margin: 40px;
+    border-radius: 20px;
+}
+
+header {
+    display: flex;
+    border-radius: 20px 20px 0 0;
+    padding: 40px;
+    background-color: white;
+}
+
+.data {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border: 1px solid #333;
+    padding: 20px;
+}
+
+.data h3 {
+    text-align: left;
+}
+
+hr {
+    width: 100%;
+    margin: 6px;
+}
+
+strong, h3 {
+    color: #333;
+}
+span {
+    color: #555;
+}
