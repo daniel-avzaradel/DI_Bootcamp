@@ -10,7 +10,6 @@ const PokemonStats = (props) => {
             return item
         }
     })
-    console.log(pokemon);
     
     return(
         <div className="box">
@@ -45,10 +44,6 @@ const PokemonStats = (props) => {
                 </header>
             </div>
 
-            <div className="btns">
-                <button className="prev">Previous</button>
-                <button className="next">Next</button>
-            </div>
         </div>
     )
 }
