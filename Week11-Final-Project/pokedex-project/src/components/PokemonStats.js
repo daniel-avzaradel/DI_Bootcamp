@@ -1,12 +1,35 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom'
+import { getPokemon } from '../services/pokemon'
 import './PokemonStats.css';
 
 const PokemonStats = (props) => {
+
+    const {id} = useParams();
+    const url = `https://pokeapi.co/api/v2/pokemon/${id}`
+    const [poke, setPoke] = useState([])
+
+    async function fetchData() {
+        let response = await getPokemon(url);
+        setPoke(response)
+        console.log(response);
+        return response;
+        // await loadingPokemon(response.results)
+    }
+
+    if(!props.pokemon) {
+        fetchData()
+    }
+
+    useEffect(() => {
+        fetchData();
+
+      }, [])
+
     
-    const {name} = useParams();
+
     const pokemon = props.pokemon.filter(item => {
-        if(item.name === name) {
+        if(item.id == id) {
             return item
         }
     })

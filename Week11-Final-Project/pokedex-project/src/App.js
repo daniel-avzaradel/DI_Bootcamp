@@ -11,8 +11,9 @@ import { getAllPokemon, getPokemon } from './services/pokemon'
 
 function App() {
   const [pokemonData, setPokemonData] = useState([]);
-  const url = 'https://pokeapi.co/api/v2/pokemon?limit=151'
+  const url = 'https://pokeapi.co/api/v2/pokemon/?limit=151'
 
+  
   useEffect(() => {
     async function fetchData() {
       let response = await getAllPokemon(url);
@@ -39,9 +40,7 @@ function App() {
             <Pokedex pokemon={pokemonData} />
           </Route>
           <Route path='/myteams' component={Myteams} />
-          <Route path='/pokedex/:name'>
-            <PokemonStats pokemon={pokemonData} />
-          </Route>
+          <Route path='/pokedex/:id' component={() => <PokemonStats pokemon={pokemonData} />} />
           <Route component={NotFound} />
         </Switch>
       </BrowserRouter>

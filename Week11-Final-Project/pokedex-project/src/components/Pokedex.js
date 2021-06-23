@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
+import { getPokemon } from '../services/pokemon'
 
 
 const Pokedex = ({pokemon}) => {
     const [search, setSearch] = useState('')
-    console.log(pokemon);
+
+
     return(
         <>
         <div className="search">
@@ -30,7 +32,7 @@ const Pokedex = ({pokemon}) => {
             .map((item, i) => {
                 return (
                     <>
-                    <Link to={'/pokedex/'+item.name}>
+                    <Link to={'/pokedex/'+item.id}>
                         <Pokemon key={pokemon.name} pokemon={item} />
                     </Link>
                     </>
