@@ -58,3 +58,22 @@ button {
     border-radius: 6px;
     cursor: pointer;
 }
+
+.stats, .base-stats {
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.base-stats {
+    flex-direction: column;
+}
+
+.bar {
+    background-color: rgb(40, 194, 78);
+    height: 12px;
+    margin: 4px 0;
+    border: 1px solid green;
+    border-radius: 2px;
+}

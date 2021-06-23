@@ -1,6 +1,6 @@
 import React from 'react';
 import {useParams} from 'react-router-dom'
-import './PokemonStats.css'
+import './PokemonStats.css';
 
 const PokemonStats = (props) => {
     
@@ -10,6 +10,8 @@ const PokemonStats = (props) => {
             return item
         }
     })
+    let total = 0;
+
     
     return(
         <div className="box">
@@ -42,8 +44,32 @@ const PokemonStats = (props) => {
                     <hr />
                 </div>
                 </header>
-            </div>
 
+                <div className="stats">
+                    <div className="base-stats">
+                        <h3>Pokemon Base Stats</h3>
+                            <hr />
+                            {
+                                pokemon[0].stats.map(item => {
+                                    total = total + item.base_stat;
+                                    return(
+                                        <div className="stat">
+                                            {item.stat.name}: 
+                                            <span> {item.base_stat}                                            
+                                                <div className="bar" style={{
+                                                        width: item.base_stat * 4
+                                                    }}>
+                                                </div> 
+                                            </span>
+                                            <hr />
+                                        </div>
+                                    )
+                                })
+                            }
+                        <strong>Total: {total}</strong><span></span>
+                        </div>
+                    </div>
+            </div>         
         </div>
     )
 }
