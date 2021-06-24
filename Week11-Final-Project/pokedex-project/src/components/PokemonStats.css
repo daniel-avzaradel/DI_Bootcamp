@@ -17,6 +17,7 @@
 header {
     display: flex;
     border-radius: 20px 20px 0 0;
+    border: 1px solid #333;
     padding: 20px;
 }
 
@@ -57,6 +58,13 @@ span {
     justify-content: left;
     align-items: flex-start;
     padding: 10px;
+}
+
+.stats {
+    background: rgb(232,232,232);
+    background: linear-gradient(145deg, rgba(232,232,232,1) 30%, rgba(138,138,138,1) 100%);
+    border-radius: 0 0 20px 20px;
+    border: 1px solid #333;
 }
 
 .base-stats {

@@ -6,6 +6,7 @@ const Navbar = () => {
         <div className="navbar">
             <div>
             <h1>Pokedex</h1>
+            <p>by: Daniel Avzaradel</p>
             </div>
             <nav>
                 <ul>
