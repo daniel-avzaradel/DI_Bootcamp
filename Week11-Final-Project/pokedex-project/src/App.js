@@ -7,6 +7,7 @@ import Pokedex from './components/Pokedex';
 import NotFound from './components/NotFound';
 import Home from './components/Home';
 import PokemonStats from './components/PokemonStats';
+import Signup from './components/Signup'
 import { getAllPokemon, getPokemon } from './services/pokemon'
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
             <Pokedex pokemon={pokemonData} />
           </Route>
           <Route path='/myteams' component={Myteams} />
+          <Route path='/signup' component={Signup} />
           <Route path='/pokedex/:id' component={() => <PokemonStats pokemon={pokemonData} />} />
           <Route component={NotFound} />
         </Switch>
