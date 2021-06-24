@@ -9,6 +9,8 @@ function Signup({pokemon}) {
         }
     })
 
+    
+
     console.log(dragonite);
 
     return (

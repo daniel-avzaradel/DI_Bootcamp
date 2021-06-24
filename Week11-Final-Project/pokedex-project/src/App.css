@@ -121,8 +121,10 @@ body {
 }
 
 .card:hover {
-  background: rgb(147,117,20);
-  background: linear-gradient(140deg, rgba(147,117,20,1) 9%, rgba(208,170,45,1) 47%, rgba(255,252,0,1) 100%);
+  /* background: rgb(147,117,20);
+  background: linear-gradient(320deg, rgb(116, 91, 12) 9%, rgba(208,170,45,1) 47%, rgba(255,252,0,1) 100%); */
+  background: rgb(182,153,0);
+  background: linear-gradient(125deg, rgba(182,153,0,1) 0%, rgba(255,255,0,1) 50%, rgba(182,153,0,1) 100%);
   transform: scale(1.05);
   border: 2px solid #333;
   box-sizing: border-box;
