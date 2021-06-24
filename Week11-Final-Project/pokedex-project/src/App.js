@@ -41,7 +41,7 @@ function App() {
             <Pokedex pokemon={pokemonData} />
           </Route>
           <Route path='/myteams' component={Myteams} />
-          <Route path='/signup' component={Signup} />
+          <Route path='/signup' component={() => <Signup pokemon={pokemonData} />} />
           <Route path='/pokedex/:id' component={() => <PokemonStats pokemon={pokemonData} />} />
           <Route component={NotFound} />
         </Switch>
