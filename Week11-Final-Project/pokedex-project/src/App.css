@@ -106,8 +106,8 @@ body {
 .card {
   width: 200px;
   height: 220px;
-  background: rgb(232,232,232);
-  background: linear-gradient(145deg, rgba(232,232,232,1) 30%, rgba(138,138,138,1) 100%);
+  background: rgb(136,136,136);
+  background: linear-gradient(120deg, rgba(136,136,136,1) 0%, rgba(204,204,204,1) 50%, rgba(136,136,136,1) 100%);
   border: 2px solid #333;
   margin: 6px;
   display: flex;
@@ -124,7 +124,7 @@ body {
   /* background: rgb(147,117,20);
   background: linear-gradient(320deg, rgb(116, 91, 12) 9%, rgba(208,170,45,1) 47%, rgba(255,252,0,1) 100%); */
   background: rgb(176,130,0);
-  background: linear-gradient(130deg, rgba(176,130,0,1) 0%, rgba(255,255,0,1) 50%, rgba(176,130,0,1) 100%);
+  background: linear-gradient(120deg, rgba(176,130,0,1) 0%, rgba(255,255,0,1) 50%, rgba(176,130,0,1) 100%);
   transform: scale(1.05);
   border: 2px solid #333;
   box-sizing: border-box;

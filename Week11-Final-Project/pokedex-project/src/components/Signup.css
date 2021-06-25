@@ -92,9 +92,11 @@ button.signup:hover {
     color: white;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    box-sizing: border-box;
 }
 
 .btn-login:hover {
     background-color: gold;
     color: #333;
+    box-sizing: border-box;
 }

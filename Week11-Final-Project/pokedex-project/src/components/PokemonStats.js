@@ -83,7 +83,7 @@ const PokemonStats = (props) => {
                                             return progressColor = 'yellowgreen'
                                         } else if (item.base_stat >= 120 && item.base_stat < 150) {
                                             return progressColor = 'mediumseagreen'
-                                        } else if (item.base_stat >= 150 && item.base_stat < 180) {
+                                        } else if (item.base_stat >= 150 && item.base_stat) {
                                             return progressColor = 'darkturquoise'
                                         }
                                         
