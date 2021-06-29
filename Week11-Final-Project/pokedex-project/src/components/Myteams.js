@@ -1,8 +1,16 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 import './Myteams.css';
 import boy from '../img/boy.png';
 
 const Myteams = ({pokemon}) => {
+
+    const [team, setTrainer] = useState({
+        team: '',
+        trainer: '',
+        age: '',
+        gender: ''
+    });
 
     return(
         <>
@@ -12,15 +20,14 @@ const Myteams = ({pokemon}) => {
             <button className="btn">Create a new team</button>
             <br />
             <div className="teams">
-            <Team pokemon={pokemon} />
+            <TeamDaniel pokemon={pokemon} />
             </div>
         </div>
         </>
     )
 }
 
-const Team = ({pokemon}) => {
-    console.log(pokemon[0])
+const TeamDaniel = ({pokemon}) => {
 
     return(
         <div className="team">
@@ -57,16 +64,20 @@ const PokemonTeam = ({pokemon}) => {
 
     return(
         <div>
+        <Link to={'/pokedex/'+ (random+1)}>
             <div className="pokemon-li">
-            <div className="sprite">
-                        <img src={pokemon[random].sprites.front_default} alt="" />
+                <div className="sprite">
+                    <div className="pokeball">
+                    <img src={pokemon[random].sprites.front_default} alt="" />
                     </div>
-                    <div className="pokemon-li-stats">
-                        <p>{pokemon[random].name.toUpperCase()}</p>
-                        <div className="hp" style={{backgroundColor: '#333'}}><p style={{color: 'gold', fontWeight: 'bold'}}>HP: </p><div className="hp-bar"></div></div>
-                        <p style={{textAlign: 'right', marginRight: '10px', color: 'white'}}>{pokemon[random].stats[0].base_stat} / {pokemon[random].stats[0].base_stat}</p>
-                    </div>
-                    </div>
+                </div>
+                <div className="pokemon-li-stats">
+                    <p>{pokemon[random].name.toUpperCase()}</p>
+                    <div className="hp" style={{backgroundColor: '#333'}}><p style={{color: 'gold', fontWeight: 'bold'}}>HP: </p><div className="hp-bar"></div></div>
+                    <p style={{textAlign: 'right', marginRight: '10px', color: 'white'}}>{pokemon[random].stats[0].base_stat} / {pokemon[random].stats[0].base_stat}</p>
+                </div>
+            </div>
+        </Link>
         </div>
     )
 }

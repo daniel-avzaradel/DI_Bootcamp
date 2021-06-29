@@ -13,12 +13,22 @@
     border-radius: 4px;
     border: none;
     outline: none;
+    box-sizing: border-box;
+    border: 1px solid #333;
+    transition: 0.1s;
+    background-color: #e2e2e2;
+}
+
+.btn:hover {
+    background-color: white;
+    box-sizing: border-box;
+    border: 1px solid #333;
 }
 
 /* ===== POKEMON TEAM ===== */
 
 .team {
-    max-width: 640px;
+    max-width: 650px;
     height: auto;
     background: rgb(102,102,102);
     background: linear-gradient(120deg, rgba(102,102,102,1) 0%, rgba(204,204,204,1) 74%, rgba(102,102,102,1) 100%);
@@ -58,6 +68,7 @@
     display: flex;
     width: 100%;
     justify-content: flex-end;
+    margin-right: 10px;
 }
 
 .trainer-img img {
@@ -87,6 +98,18 @@
     background: linear-gradient(180deg, rgba(74,194,208,1) 0%, rgba(14,91,107,1) 88%);
     border: 2px solid #333;
     border-radius: 20px;
+    transition: 0.1s ease all;
+}
+
+.pokemon-li:hover {
+    background: rgb(93, 224, 236);
+}
+
+.sprite {
+    background-image: url('../img/pokeball-bg.png');
+    background-position: top;
+    background-size: cover;
+    opacity: 1;
 }
 
 .sprite img {

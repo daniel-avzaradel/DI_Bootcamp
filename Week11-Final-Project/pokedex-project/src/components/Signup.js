@@ -7,7 +7,7 @@ function Signup({pokemon}) {
     const [password, setPassword] = useState('')
 
     const dragonite = pokemon.filter(item => {
-        if(item.name == 'dragonite') {
+        if(item.name === 'dragonite') {
             return item
         }
     })
