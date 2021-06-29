@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {Link} from 'react-router-dom';
 
 
@@ -8,7 +8,7 @@ const Pokedex = ({pokemon}) => {
     return(
         <>
         <div className="search">
-            <input type="text" placeholder="Search" onChange={(event) => {setSearch(event.target.value)}} /><i class="fas fa-search"></i>
+            <input type="text" placeholder="Search" onChange={(event) => {setSearch(event.target.value)}} /><i className="fas fa-search"></i>
         </div>
         <div className="grid-container">
         {
@@ -16,13 +16,13 @@ const Pokedex = ({pokemon}) => {
                 if(search === '') {
                     return (
                         <>
-                        <Pokemon key={pokemon.name} pokemon={item} />
+                            <Pokemon key={i} pokemon={item} />
                         </>
                     )
                 } else if (item.name.toLowerCase().includes(search.toLocaleLowerCase())) {
                     return (
                         <>
-                        <Pokemon key={pokemon.name} pokemon={item} />
+                            <Pokemon key={i} pokemon={item} />
                         </>
                     )
                 }
@@ -31,7 +31,7 @@ const Pokedex = ({pokemon}) => {
                 return (
                     <>
                     <Link to={'/pokedex/'+item.id}>
-                        <Pokemon key={pokemon.name} pokemon={item} />
+                        <Pokemon key={i} pokemon={item} />
                     </Link>
                     </>
                 )

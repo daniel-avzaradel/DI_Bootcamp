@@ -1,0 +1,67 @@
+.team-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    background-color: #ccc;
+}
+
+
+/* ===== POKEMON TEAM ===== */
+
+.team {
+    width: 400px;
+    height: auto;
+    background: rgb(102,102,102);
+    background: linear-gradient(120deg, rgba(102,102,102,1) 0%, rgba(204,204,204,1) 74%, rgba(102,102,102,1) 100%);
+    border: 2px solid #333;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.trainer {
+    width: auto;
+    text-align: left;
+    display: flex;
+    color: #333;
+    background-color: rgb(73, 163, 159);
+    padding: 10px;
+    border-radius: 6px 6px 0 0;
+}
+
+.trainer-stats {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+    min-width: 60%;
+}
+
+.trainer-img {
+    display: flex;
+    justify-content: right;
+}
+
+.trainer-img img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.pokemon-list {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pokemon-li {
+    width: 100%;
+    margin: 10px;
+    border: none;
+    background-color: lightseagreen;
+}
