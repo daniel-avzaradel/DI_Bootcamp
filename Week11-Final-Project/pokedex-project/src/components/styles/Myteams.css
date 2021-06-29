@@ -62,6 +62,11 @@
     flex-direction: column;
     margin: 0 20px;
     min-width: 60%;
+    color: #222;
+}
+
+.traner-stats p, .trainer-stats span {
+    color: #333;
 }
 
 .trainer-img {
@@ -106,7 +111,7 @@
 }
 
 .sprite {
-    background-image: url('../img/pokeball-bg.png');
+    background-image: url('../../img/pokeball-bg.png');
     background-position: top;
     background-size: cover;
     opacity: 1;

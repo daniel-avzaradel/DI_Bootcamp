@@ -1,7 +1,7 @@
 import React from 'react';
 import pikachu003 from '../img/pikachu003.png';
 import { Link } from 'react-router-dom';
-import './Home.css';
+import './styles/Home.css';
 
 class Home extends React.Component {
 

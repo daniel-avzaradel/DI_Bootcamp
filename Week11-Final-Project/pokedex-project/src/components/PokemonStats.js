@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom'
 import { getPokemon } from '../services/pokemon'
-import './PokemonStats.css';
+import './styles/PokemonStats.css';
 
 const PokemonStats = (props) => {
 

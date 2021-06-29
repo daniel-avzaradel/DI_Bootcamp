@@ -1,10 +1,11 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import './Myteams.css';
+import './styles/Myteams.css';
 import boy from '../img/boy.png';
 
 const Myteams = ({pokemon}) => {
 
+    const [create, setCreate] = useState(false)
     const [team, setTrainer] = useState({
         team: '',
         trainer: '',
@@ -33,10 +34,10 @@ const TeamDaniel = ({pokemon}) => {
         <div className="team">
             <div className="trainer">
                 <div className="trainer-stats">
-                <h3>Team <span style={{color: '#f4f4f4'}}>Developers Institute</span></h3>
-                <h4>Trainer: <span style={{color: '#f4f4f4'}}>Daniel Avzaradel</span></h4>
-                <h4>Age: <span style={{color: '#f4f4f4'}}>32</span></h4>
-                <h4>Gender: <span style={{color: '#f4f4f4'}}>Male</span></h4>
+                <h3>Team <span>Developers Institute</span></h3>
+                <p>Trainer: <span>Daniel Avzaradel</span></p>
+                <p>Age: <span>32</span></p>
+                <p>Gender: <span>Male</span></p>
                 </div>
                 <div className="trainer-img">
                     <img src={boy} alt="" />
