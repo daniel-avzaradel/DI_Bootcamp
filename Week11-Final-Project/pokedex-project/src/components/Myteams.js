@@ -16,7 +16,7 @@ const Myteams = ({pokemon}) => {
 }
 
 const Team = ({pokemon}) => {
-    console.log(pokemon)
+    console.log(pokemon[0])
 
     return(
         <div className="team">
@@ -32,13 +32,33 @@ const Team = ({pokemon}) => {
                 </div>
             </div>
             <div className="pokemon-list">
-                <div className="pokemon-li">Pokemon #1</div>
-                <p>Pokemon #2</p><br />
-                <p>Pokemon #3</p><br />
-                <p>Pokemon #4</p><br />
-                <p>Pokemon #5</p><br />
-                <p>Pokemon #6</p><br />
+                    <PokemonTeam pokemon={pokemon} />
+                    <PokemonTeam pokemon={pokemon} />
+                    <PokemonTeam pokemon={pokemon} />
+                    <PokemonTeam pokemon={pokemon} />
+                    <PokemonTeam pokemon={pokemon} />
+                    <PokemonTeam pokemon={pokemon} />
             </div>
+        </div>
+    )
+}
+
+const PokemonTeam = ({pokemon}) => {
+
+    const random = Math.floor(Math.random() * 151);
+
+    return(
+        <div>
+            <div className="pokemon-li">
+            <div className="sprite">
+                        <img src={pokemon[random].sprites.front_default} alt="" />
+                    </div>
+                    <div className="pokemon-li-stats">
+                        <p>{pokemon[random].name.toUpperCase()}</p>
+                        <div className="hp" style={{backgroundColor: '#333'}}><p style={{color: 'gold', fontWeight: 'bold'}}>HP: </p><div className="hp-bar"></div></div>
+                        <p style={{textAlign: 'right', marginRight: '10px', color: 'white'}}>{pokemon[random].stats[0].base_stat} / {pokemon[random].stats[0].base_stat}</p>
+                    </div>
+                    </div>
         </div>
     )
 }
