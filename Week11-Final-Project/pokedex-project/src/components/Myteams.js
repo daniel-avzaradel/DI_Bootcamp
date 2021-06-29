@@ -6,26 +6,71 @@ import boy from '../img/boy.png';
 const Myteams = ({pokemon}) => {
 
     const [create, setCreate] = useState(false)
-    const [team, setTrainer] = useState({
-        team: '',
-        trainer: '',
-        age: '',
-        gender: ''
-    });
+    const [team, setTeam] = useState('');
+    const [trainer, setTrainer] = useState('');
+    const [age, setAge] = useState('');
+    const [gender, setGender] = useState('male');
 
-    return(
-        <>
-        <div className="team-page">
-            <h1>MY TEAMS</h1>
-            <br />
-            <button className="btn">Create a new team</button>
-            <br />
-            <div className="teams">
-            <TeamDaniel pokemon={pokemon} />
-            </div>
+    if(create) {
+        return(
+        <div className="new-team-form">
+            <h2>CREATE A NEW TEAM</h2>
+            <form action="">
+                <label htmlFor="team-name">Team Name: </label>
+                <input type="text" id="team-name" onChange={(e) => setTeam(e.target.value)} required/>
+           
+                <label htmlFor="trainer-name">Trainer Name: </label>
+                <input type="text" id="trainer-name" onChange={(e) => setTrainer(e.target.value)} required/>
+                
+                <label htmlFor="trainer-age">Age: </label>
+                <input type="number" id="trainer-age" onChange={(e) => setAge(e.target.value)} required/>
+
+                <br />
+
+                <p>Are you a boy or a girl?</p>
+                
+                <div onChange={(e) => setGender(e.target.value)}>
+                    <div className="radio">
+                    <label htmlFor="male">Boy</label>
+                    <input type="radio" name="gender" value="male" id="male" defaultChecked />
+                    </div>
+
+                    <div className="radio">
+                    <label htmlFor="female">Girl</label>
+                    <input type="radio" name="gender" value="female" id="female" />
+                    </div>
+                </div>
+
+                <br />
+
+                <button type="Submit" className="btn" onClick={(e) => {
+
+                    if(team == '' || trainer == '' || age == '' || gender == '') {
+                        return alert('Please fill all required fields')
+                    }
+                    e.preventDefault();
+                    console.log(team, trainer, age, gender);
+                    setGender('male')
+                    setCreate(false);
+                }}>Create</button>
+            </form>
         </div>
+        );
+    } else {
+        return(
+        <>
+            <div className="team-page">
+                <h1>MY TEAMS</h1>
+                <br />
+                <button className="btn" onClick={() => setCreate(true)}>Create a new team</button>
+                <br />
+                <div className="teams">
+                <TeamDaniel pokemon={pokemon} />
+                </div>
+            </div>
         </>
-    )
+        )
+    }
 }
 
 const TeamDaniel = ({pokemon}) => {
