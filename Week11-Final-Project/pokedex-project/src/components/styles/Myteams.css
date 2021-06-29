@@ -15,11 +15,13 @@
     box-sizing: border-box;
     border: 1px solid #333;
     transition: 0.1s;
-    background-color: #e2e2e2;
+    background-color: rgb(187, 59, 59);
+    color: white;
 }
 
 .btn:hover {
-    background-color: white;
+    background-color: rgb(212, 212, 212);
+    color: #333;
     box-sizing: border-box;
     border: 1px solid #333;
 }
@@ -183,7 +185,7 @@
     justify-content: flex-start;
     text-align: left;
     padding: 20px;
-    background-color: rgb(92, 45, 45);
+    background-color: rgb(66, 66, 66);
     background-image: url('../../img/pokeball-bg.png');
     background-size: cover;
     border-radius: 10px;

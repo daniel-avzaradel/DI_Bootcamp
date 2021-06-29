@@ -45,20 +45,21 @@ const Myteams = ({pokemon}) => {
                 <br />
                 <button type="Submit" className="btn" onClick={(e) => {
 
-                    if(team == '' || trainer == '' || age == '' || gender == '') {
+                    if(team === '' || trainer === '' || age === '' || gender === '') {
                         return alert('Please fill all required fields')
                     }
                     e.preventDefault();
                     console.log(team, trainer, age, gender);
-                    if(gender == '') {
+                    if(gender === '') {
                         setGender('boy')
                     }
                     setCreate(false);
                 }}>Create</button>
                 <br />
-                <button className="btn" onClick={() => setCreate(false)}>Close</button>
 
             </form>
+            <br />
+            <button className="btn" onClick={() => setCreate(false)}>Go Back</button>
 
         </div>
         );
@@ -91,7 +92,6 @@ const Myteams = ({pokemon}) => {
 }
 
 const Team = ({pokemon, team, trainer, age, gender}) => {
-    console.log(gender);
     return(
         <div className="team">
             <div className="trainer">
@@ -103,7 +103,7 @@ const Team = ({pokemon, team, trainer, age, gender}) => {
                 </div>
                 <div className="trainer-img">
                     {
-                        gender == 'boy' ? (
+                        gender === 'boy' ? (
                             <img src={boy} alt="" />
                         ) : (
                             <img src={girl} alt="" />
@@ -135,7 +135,7 @@ const TeamDaniel = ({pokemon}) => {
                 <div className="trainer-stats">
                 <h3>Team: <span>Developers Institute</span></h3>
                 <p>Trainer: <span>Daniel</span></p>
-                <p>Age: <span>16</span></p>
+                <p>Age: <span>12</span></p>
                 <p>Gender: <span>boy</span></p>
                 </div>
                 <div className="trainer-img">
