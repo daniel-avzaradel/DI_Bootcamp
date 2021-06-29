@@ -49,6 +49,7 @@ const Myteams = ({pokemon}) => {
                         return alert('Please fill all required fields')
                     }
                     e.preventDefault();
+                    console.log(team, trainer, age, gender);
                     if(gender == '') {
                         setGender('boy')
                     }
@@ -71,13 +72,17 @@ const Myteams = ({pokemon}) => {
                 <br />
                 <div className="teams">
                 <TeamDaniel pokemon={pokemon} />
-                <Team 
+                {
+                    team !== '' ? (
+                        <Team 
                 pokemon={pokemon} 
                 team={team}
                 trainer={trainer}
                 age={age}
                 gender={gender}
                 />
+                    ) : (<></>)
+                }
                 </div>
             </div>
         </>
@@ -91,13 +96,19 @@ const Team = ({pokemon, team, trainer, age, gender}) => {
         <div className="team">
             <div className="trainer">
                 <div className="trainer-stats">
-                <h3>Team <span>{team}</span></h3>
+                <h3>Team: <span>{team}</span></h3>
                 <p>Trainer: <span>{trainer}</span></p>
                 <p>Age: <span>{age}</span></p>
                 <p>Gender: <span>{gender}</span></p>
                 </div>
                 <div className="trainer-img">
-                    <img src={gender} alt="" />
+                    {
+                        gender == 'boy' ? (
+                            <img src={boy} alt="" />
+                        ) : (
+                            <img src={girl} alt="" />
+                        )
+                    }
                 </div>
             </div>
             <div className="pokemon-list">
@@ -122,9 +133,9 @@ const TeamDaniel = ({pokemon}) => {
         <div className="team">
             <div className="trainer">
                 <div className="trainer-stats">
-                <h3>Team <span>Developers Institute</span></h3>
-                <p>Trainer: <span>Daniel Avzaradel</span></p>
-                <p>Age: <span>32</span></p>
+                <h3>Team: <span>Developers Institute</span></h3>
+                <p>Trainer: <span>Daniel</span></p>
+                <p>Age: <span>16</span></p>
                 <p>Gender: <span>boy</span></p>
                 </div>
                 <div className="trainer-img">
