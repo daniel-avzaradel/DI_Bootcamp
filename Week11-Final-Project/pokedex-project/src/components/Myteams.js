@@ -9,7 +9,9 @@ const Myteams = ({pokemon}) => {
         <div className="team-page">
             <h1>MY TEAMS</h1>
             <br />
+            <div className="teams">
             <Team pokemon={pokemon} />
+            </div>
         </div>
         </>
     )
@@ -23,7 +25,7 @@ const Team = ({pokemon}) => {
             <div className="trainer">
                 <div className="trainer-stats">
                 <h3>Team <span style={{color: '#f4f4f4'}}>Developers Institute</span></h3>
-                <h4>Trainer: <span style={{color: '#f4f4f4'}}>Daniel</span></h4>
+                <h4>Trainer: <span style={{color: '#f4f4f4'}}>Daniel Avzaradel</span></h4>
                 <h4>Age: <span style={{color: '#f4f4f4'}}>32</span></h4>
                 <h4>Gender: <span style={{color: '#f4f4f4'}}>Male</span></h4>
                 </div>
@@ -38,6 +40,10 @@ const Team = ({pokemon}) => {
                     <PokemonTeam pokemon={pokemon} />
                     <PokemonTeam pokemon={pokemon} />
                     <PokemonTeam pokemon={pokemon} />
+            </div>
+            <div className="buttons">
+                <button>Edit</button>
+                <button>Delete</button>
             </div>
         </div>
     )
