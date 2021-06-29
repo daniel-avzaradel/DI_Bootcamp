@@ -4,7 +4,6 @@
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #ccc;
 }
 
 .btn {
@@ -171,7 +170,6 @@
 /* ============= */
 
 .new-team-form {
-    background-color: #ccc;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -185,19 +183,22 @@
     justify-content: flex-start;
     text-align: left;
     padding: 20px;
-    background-color: white;
+    background-color: rgb(92, 45, 45);
+    background-image: url('../../img/pokeball-bg.png');
+    background-size: cover;
     border-radius: 10px;
     box-sizing: border-box;
     box-shadow: 0 0 10px rgba(0,0,0,0.4);
     width: 400px;
+    color: white;
 }
 
 .new-team-form input {
-    border: none;
+    border: 1px solid #333;
     padding: 6px 12px;
     outline: none;
     margin: 8px 0;
-    background-color: #d2d2d2;
+    background-color: #f2f2f2;
 }
 
 .new-team-form input[type=radio] {

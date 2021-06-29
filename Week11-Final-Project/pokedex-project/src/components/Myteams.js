@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import './styles/Myteams.css';
 import boy from '../img/boy.png';
+import girl from '../img/girl.png';
 
 const Myteams = ({pokemon}) => {
 
@@ -9,7 +10,7 @@ const Myteams = ({pokemon}) => {
     const [team, setTeam] = useState('');
     const [trainer, setTrainer] = useState('');
     const [age, setAge] = useState('');
-    const [gender, setGender] = useState('male');
+    const [gender, setGender] = useState('boy');
 
     if(create) {
         return(
@@ -31,29 +32,33 @@ const Myteams = ({pokemon}) => {
                 
                 <div onChange={(e) => setGender(e.target.value)}>
                     <div className="radio">
-                    <label htmlFor="male">Boy</label>
-                    <input type="radio" name="gender" value="male" id="male" defaultChecked />
+                    <label htmlFor="boy">Boy</label>
+                    <input type="radio" name="gender" value="boy" id="boy" defaultChecked />
                     </div>
 
                     <div className="radio">
-                    <label htmlFor="female">Girl</label>
-                    <input type="radio" name="gender" value="female" id="female" />
+                    <label htmlFor="girl">Girl</label>
+                    <input type="radio" name="gender" value="girl" id="girl" />
                     </div>
                 </div>
 
                 <br />
-
                 <button type="Submit" className="btn" onClick={(e) => {
 
                     if(team == '' || trainer == '' || age == '' || gender == '') {
                         return alert('Please fill all required fields')
                     }
                     e.preventDefault();
-                    console.log(team, trainer, age, gender);
-                    setGender('male')
+                    if(gender == '') {
+                        setGender('boy')
+                    }
                     setCreate(false);
                 }}>Create</button>
+                <br />
+                <button className="btn" onClick={() => setCreate(false)}>Close</button>
+
             </form>
+
         </div>
         );
     } else {
@@ -66,6 +71,13 @@ const Myteams = ({pokemon}) => {
                 <br />
                 <div className="teams">
                 <TeamDaniel pokemon={pokemon} />
+                <Team 
+                pokemon={pokemon} 
+                team={team}
+                trainer={trainer}
+                age={age}
+                gender={gender}
+                />
                 </div>
             </div>
         </>
@@ -73,19 +85,19 @@ const Myteams = ({pokemon}) => {
     }
 }
 
-const TeamDaniel = ({pokemon}) => {
-
+const Team = ({pokemon, team, trainer, age, gender}) => {
+    console.log(gender);
     return(
         <div className="team">
             <div className="trainer">
                 <div className="trainer-stats">
-                <h3>Team <span>Developers Institute</span></h3>
-                <p>Trainer: <span>Daniel Avzaradel</span></p>
-                <p>Age: <span>32</span></p>
-                <p>Gender: <span>Male</span></p>
+                <h3>Team <span>{team}</span></h3>
+                <p>Trainer: <span>{trainer}</span></p>
+                <p>Age: <span>{age}</span></p>
+                <p>Gender: <span>{gender}</span></p>
                 </div>
                 <div className="trainer-img">
-                    <img src={boy} alt="" />
+                    <img src={gender} alt="" />
                 </div>
             </div>
             <div className="pokemon-list">
@@ -104,7 +116,62 @@ const TeamDaniel = ({pokemon}) => {
     )
 }
 
+const TeamDaniel = ({pokemon}) => {
+
+    return(
+        <div className="team">
+            <div className="trainer">
+                <div className="trainer-stats">
+                <h3>Team <span>Developers Institute</span></h3>
+                <p>Trainer: <span>Daniel Avzaradel</span></p>
+                <p>Age: <span>32</span></p>
+                <p>Gender: <span>boy</span></p>
+                </div>
+                <div className="trainer-img">
+                    <img src={boy} alt="" />
+                </div>
+            </div>
+            <div className="pokemon-list">
+                    <PokemonTeamRandom pokemon={pokemon} />
+                    <PokemonTeamRandom pokemon={pokemon} />
+                    <PokemonTeamRandom pokemon={pokemon} />
+                    <PokemonTeamRandom pokemon={pokemon} />
+                    <PokemonTeamRandom pokemon={pokemon} />
+                    <PokemonTeamRandom pokemon={pokemon} />
+            </div>
+            <div className="buttons">
+                <button>Edit</button>
+                <button>Delete</button>
+            </div>
+        </div>
+    )
+}
+
 const PokemonTeam = ({pokemon}) => {
+
+    const random = Math.floor(Math.random() * 151);
+
+    return(
+        <div>
+        <Link to={'/pokedex/'+ (random+1)}>
+            <div className="pokemon-li">
+                <div className="sprite">
+                    <div className="pokeball">
+                    <img src={pokemon[random].sprites.front_default} alt="" />
+                    </div>
+                </div>
+                <div className="pokemon-li-stats">
+                    <p>{pokemon[random].name.toUpperCase()}</p>
+                    <div className="hp" style={{backgroundColor: '#333'}}><p style={{color: 'gold', fontWeight: 'bold'}}>HP: </p><div className="hp-bar"></div></div>
+                    <p style={{textAlign: 'right', marginRight: '10px', color: 'white'}}>{pokemon[random].stats[0].base_stat} / {pokemon[random].stats[0].base_stat}</p>
+                </div>
+            </div>
+        </Link>
+        </div>
+    )
+}
+
+const PokemonTeamRandom = ({pokemon}) => {
 
     const random = Math.floor(Math.random() * 151);
 
