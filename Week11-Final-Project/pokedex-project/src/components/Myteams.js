@@ -9,6 +9,8 @@ const Myteams = ({pokemon}) => {
         <div className="team-page">
             <h1>MY TEAMS</h1>
             <br />
+            <button className="btn">Create a new team</button>
+            <br />
             <div className="teams">
             <Team pokemon={pokemon} />
             </div>
