@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {useParams} from 'react-router-dom'
+import {useParams, Link} from 'react-router-dom'
 import { getPokemon } from '../services/pokemon'
 import './styles/PokemonStats.css';
 
@@ -35,6 +35,7 @@ const PokemonStats = (props) => {
     
     return(
         <div className="box">
+
             <div className="poke-card">
                 <header style={{backgroundColor: TYPE_COLORS[pokemon[0].types[0].type.name]}}>
                 <img src={pokemon[0].sprites.other.dream_world.front_default} alt="" style={{maxHeight: 'auto', maxWidth: '20%', float: 'left'}} />
@@ -62,6 +63,9 @@ const PokemonStats = (props) => {
                     <hr />
                     <p><strong>Weight: </strong> <span>{(pokemon[0].weight / 10).toFixed(1)}Kg</span></p>
                     <hr />
+                    <Link to='/pokedex' >
+                        <button style={{padding: '2px 8px', cursor: 'pointer'}}>Go Back to the Pokedex</button>
+                    </Link>
                 </div>
                 </header>
 

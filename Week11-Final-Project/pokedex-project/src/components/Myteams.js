@@ -11,6 +11,7 @@ const Myteams = ({pokemon}) => {
     const [trainer, setTrainer] = useState('');
     const [age, setAge] = useState('');
     const [gender, setGender] = useState('boy');
+    const [count, setCount] = useState(0)
 
     if(create) {
         return(
@@ -53,6 +54,8 @@ const Myteams = ({pokemon}) => {
                     if(gender === '') {
                         setGender('boy')
                     }
+                    setCount(count + 1);
+                    console.log(count);
                     setCreate(false);
                 }}>Create</button>
                 <br />
@@ -73,7 +76,7 @@ const Myteams = ({pokemon}) => {
                 <br />
                 <div className="teams">
                 <TeamDaniel pokemon={pokemon} />
-                {
+                {/* {
                     team !== '' ? (
                         <Team 
                 pokemon={pokemon} 
@@ -83,7 +86,7 @@ const Myteams = ({pokemon}) => {
                 gender={gender}
                 />
                     ) : (<></>)
-                }
+                } */}
                 </div>
             </div>
         </>
