@@ -198,12 +198,6 @@ const Myteams = ({ pokemon }) => {
                     trainer={item[1]}
                     age={item[2]}
                     gender={item[3]}
-                    one={one}
-                    two={two}
-                    three={three}
-                    four={four}
-                    five={five}
-                    six={six}
                     key={i}
                   />
                 );
