@@ -11,6 +11,9 @@ const Myteams = ({ pokemon }) => {
   const [age, setAge] = useState("16");
   const [gender, setGender] = useState("boy");
   const [teams, setTeams] = useState([[team, trainer, age, gender]]);
+  //   const [list, setList] = useState([])
+
+  console.log(pokemon);
 
   if (create) {
     return (
@@ -21,6 +24,7 @@ const Myteams = ({ pokemon }) => {
           <input
             type="text"
             id="team-name"
+            value={team}
             onChange={(e) => setTeam(e.target.value)}
             required
           />
@@ -29,6 +33,7 @@ const Myteams = ({ pokemon }) => {
           <input
             type="text"
             id="trainer-name"
+            value={trainer}
             onChange={(e) => setTrainer(e.target.value)}
             required
           />
@@ -37,6 +42,7 @@ const Myteams = ({ pokemon }) => {
           <input
             type="number"
             id="trainer-age"
+            value={age}
             onChange={(e) => setAge(e.target.value)}
             required
           />
@@ -48,12 +54,42 @@ const Myteams = ({ pokemon }) => {
           <div onChange={(e) => setGender(e.target.value)}>
             <div className="radio">
               <label htmlFor="boy">Boy</label>
-              <input type="radio" name="gender" value="boy" id="boy" />
+              <input
+                type="radio"
+                name="gender"
+                value={gender}
+                id="boy"
+                onChange={(e) => setGender(e.target.value)}
+                checked
+              />
             </div>
 
             <div className="radio">
               <label htmlFor="girl">Girl</label>
-              <input type="radio" name="gender" value="girl" id="girl" />
+              <input
+                type="radio"
+                name="gender"
+                value={gender}
+                id="girl"
+                onChange={(e) => setGender(e.target.value)}
+              />
+            </div>
+          </div>
+
+          <br />
+
+          <p>Select your team:</p>
+          <br />
+          <div className="list">
+            <div>
+              <p>Pokemon #1</p>
+              <select name="one" id="one">
+                <option value="none">none</option>
+
+                {pokemon.map((item) => {
+                  return <option value={item.name}>{item.name}</option>;
+                })}
+              </select>
             </div>
           </div>
 
@@ -63,16 +99,6 @@ const Myteams = ({ pokemon }) => {
             className="btn"
             onClick={(e) => {
               e.preventDefault();
-
-              // fetch(`http://localhost:3000/myteams`)
-              // .then(res => res.json())
-              // .then(data => {
-              //     console.log(data);
-              // })
-
-              if (gender === "") {
-                setGender("boy");
-              }
 
               setTeams([...teams, [team, trainer, age, gender]]);
               setCreate(false);
@@ -137,17 +163,15 @@ const Myteams = ({ pokemon }) => {
 };
 
 const Team = ({ pokemon, team, trainer, age, gender }) => {
+  const [pokemonteams, setPokemonteams] = useState([]);
 
-    const [pokemonteams, setPokemonteams] = useState([]);
-
-    useEffect(() => {
-      fetch("http://localhost:5000/team")
-        .then((res) => res.json())
-        .then((data) => {
-          setPokemonteams(data);
-        });
-    }, []);
-
+  useEffect(() => {
+    fetch("http://localhost:5000/team")
+      .then((res) => res.json())
+      .then((data) => {
+        setPokemonteams(data);
+      });
+  }, []);
 
   return (
     <div className="team">
@@ -176,7 +200,7 @@ const Team = ({ pokemon, team, trainer, age, gender }) => {
       </div>
       <div className="pokemon-list">
         {pokemonteams.map((team) => {
-          return <PokemonTeam pokemon={pokemon} team={team} key={team.id}/>;
+          return <PokemonTeam pokemon={pokemon} team={team} key={team.id} />;
         })}
         {/* <PokemonTeam pokemon={pokemon} />
                     <PokemonTeam pokemon={pokemon} />
@@ -249,10 +273,7 @@ const Team = ({ pokemon, team, trainer, age, gender }) => {
 // }
 
 const PokemonTeam = ({ pokemon, team }) => {
-
-//   const random = Math.floor(Math.random() * 151);
-
-    console.log(team.id + 1);
+  //   const random = Math.floor(Math.random() * 151);
 
   return (
     <div>

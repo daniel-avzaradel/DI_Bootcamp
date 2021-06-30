@@ -213,3 +213,21 @@
 h2 {
     margin: 20px;
 }
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0;
+    background-color:rgb(146, 41, 41);
+    margin: 10px 0;
+    padding: 0 10px;
+}
+
+#one {
+    margin: 10px 0;
+}
