@@ -10,14 +10,14 @@ const Myteams = ({ pokemon }) => {
   const [trainer, setTrainer] = useState('');
   const [age, setAge] = useState('');
   const [gender, setGender] = useState('');
-  const [one, setOne] = useState('')
-  const [two, setTwo] = useState('')
-  const [three, setThree] = useState('')
-  const [four, setFour] = useState('')
-  const [five, setFive] = useState('')
-  const [six, setSix] = useState('')
+  const [one, setOne] = useState()
+  const [two, setTwo] = useState()
+  const [three, setThree] = useState()
+  const [four, setFour] = useState()
+  const [five, setFive] = useState()
+  const [six, setSix] = useState()
   const [list, setList] = useState([one, two, three, four, five, six])
-  const [teams, setTeams] = useState([[team, trainer, age, gender, one, two, three, four, five, six]]);
+  const [teams, setTeams] = useState([[team, trainer, age, gender]]);
 
 
   if (create) {
@@ -89,7 +89,7 @@ const Myteams = ({ pokemon }) => {
                 <option value="none">none</option>
 
                 {pokemon.map((item) => {
-                  return <option value={item.name}>{item.name}</option>;
+                  return <option value={item.id}>{item.name}</option>;
                 })}
               </select>
             </div>
@@ -101,7 +101,7 @@ const Myteams = ({ pokemon }) => {
                 <option value="none">none</option>
 
                 {pokemon.map((item) => {
-                  return <option value={item.name}>{item.name}</option>;
+                  return <option value={item.id}>{item.name}</option>;
                 })}
               </select>
             </div>
@@ -113,7 +113,7 @@ const Myteams = ({ pokemon }) => {
                 <option value="none">none</option>
 
                 {pokemon.map((item) => {
-                  return <option value={item.name}>{item.name}</option>;
+                  return <option value={item.id}>{item.name}</option>;
                 })}
               </select>
             </div>
@@ -125,7 +125,7 @@ const Myteams = ({ pokemon }) => {
                 <option value="none">none</option>
 
                 {pokemon.map((item) => {
-                  return <option value={item.name}>{item.name}</option>;
+                  return <option value={item.id}>{item.name}</option>;
                 })}
               </select>
             </div>
@@ -137,7 +137,7 @@ const Myteams = ({ pokemon }) => {
                 <option value="none">none</option>
 
                 {pokemon.map((item) => {
-                  return <option value={item.name}>{item.name}</option>;
+                  return <option value={item.id}>{item.name}</option>;
                 })}
               </select>
             </div>
@@ -149,7 +149,7 @@ const Myteams = ({ pokemon }) => {
                 <option value="none">none</option>
 
                 {pokemon.map((item) => {
-                  return <option value={item.name}>{item.name}</option>;
+                  return <option value={item.id}>{item.name}</option>;
                 })}
               </select>
             </div>
@@ -163,7 +163,8 @@ const Myteams = ({ pokemon }) => {
             onClick={(e) => {
               e.preventDefault();
 
-              setTeams([...teams, [team, trainer, age, gender, one, two, three, four, five, six]]);
+              setTeams([...teams, [team, trainer, age, gender]]);
+              setList([one, two, three, four, five, six]);
               setCreate(false);
             }}
           >
@@ -210,6 +211,7 @@ const Myteams = ({ pokemon }) => {
                       trainer={item[1]}
                       age={item[2]}
                       gender={item[3]}
+                      list={list}
                       key={i}
                     />
                   );
@@ -277,17 +279,7 @@ const TeamDaniel = ({ pokemon, team, trainer, age, gender }) => {
   );
 };
 
-const Team = ({ pokemon, team, trainer, age, gender }) => {
-
-  const [pokemonteams, setPokemonteams] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/team")
-      .then((res) => res.json())
-      .then((data) => {
-        setPokemonteams(data);
-      });
-  }, []);
+const Team = ({ pokemon, team, trainer, age, gender, list }) => {
 
   return (
     <div className="team">
@@ -315,8 +307,8 @@ const Team = ({ pokemon, team, trainer, age, gender }) => {
         </div>
       </div>
       <div className="pokemon-list">
-        {pokemonteams.map((team) => {
-          return <PokemonTeam pokemon={pokemon} team={team} key={team.id} />;
+        {list.map((item, i) => {
+          return <PokemonTeamCustom pokemon={pokemon} team={item} key={i} />;
         })}
 
       </div>
@@ -324,6 +316,44 @@ const Team = ({ pokemon, team, trainer, age, gender }) => {
         <button>Edit</button>
         <button>Delete</button>
       </div>
+    </div>
+  );
+};
+
+const PokemonTeamCustom = ({ pokemon, team }) => {
+
+    const random = Math.floor(Math.random() * 151);
+
+    console.log(team);
+
+  return (
+    <div>
+      <Link to={"/pokedex/" + (team)}>
+        <div className="pokemon-li">
+          <div className="sprite">
+            <div className="pokeball">
+              <img src={pokemon[team-1].sprites.front_default} alt="" />
+            </div>
+          </div>
+          <div className="pokemon-li-stats">
+            <p>{pokemon[team-1].name.toUpperCase()}</p>
+            <div className="hp" style={{ backgroundColor: "#333" }}>
+              <p style={{ color: "gold", fontWeight: "bold" }}>HP: </p>
+              <div className="hp-bar"></div>
+            </div>
+            <p
+              style={{
+                textAlign: "right",
+                marginRight: "10px",
+                color: "white",
+              }}
+            >
+              {pokemon[team-1].stats[0].base_stat} /{" "}
+              {pokemon[team-1].stats[0].base_stat}
+            </p>
+          </div>
+        </div>
+      </Link>
     </div>
   );
 };
