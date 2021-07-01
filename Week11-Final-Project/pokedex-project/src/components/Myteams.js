@@ -10,12 +10,12 @@ const Myteams = ({ pokemon }) => {
   const [trainer, setTrainer] = useState('');
   const [age, setAge] = useState('');
   const [gender, setGender] = useState('');
-  const [one, setOne] = useState()
-  const [two, setTwo] = useState()
-  const [three, setThree] = useState()
-  const [four, setFour] = useState()
-  const [five, setFive] = useState()
-  const [six, setSix] = useState()
+  const [one, setOne] = useState(1)
+  const [two, setTwo] = useState(1)
+  const [three, setThree] = useState(1)
+  const [four, setFour] = useState(1)
+  const [five, setFive] = useState(1)
+  const [six, setSix] = useState(1)
   const [list, setList] = useState([one, two, three, four, five, six])
   const [teams, setTeams] = useState([[team, trainer, age, gender]]);
 
@@ -86,7 +86,6 @@ const Myteams = ({ pokemon }) => {
               <p>Pokemon #1</p>
               <select name="one" id="one" onChange={(e) => {
                     setOne(e.target.value)}}>
-                <option value="none">none</option>
 
                 {pokemon.map((item) => {
                   return <option value={item.id}>{item.name}</option>;
@@ -98,7 +97,6 @@ const Myteams = ({ pokemon }) => {
               <p>Pokemon #2</p>
               <select name="two" id="two" onChange={(e) => {
                     setTwo(e.target.value)}}>
-                <option value="none">none</option>
 
                 {pokemon.map((item) => {
                   return <option value={item.id}>{item.name}</option>;
@@ -110,7 +108,6 @@ const Myteams = ({ pokemon }) => {
               <p>Pokemon #3</p>
               <select name="three" id="three" onChange={(e) => {
                     setThree(e.target.value)}}>
-                <option value="none">none</option>
 
                 {pokemon.map((item) => {
                   return <option value={item.id}>{item.name}</option>;
@@ -122,7 +119,6 @@ const Myteams = ({ pokemon }) => {
               <p>Pokemon #4</p>
               <select name="four" id="four" onChange={(e) => {
                     setFour(e.target.value)}}>
-                <option value="none">none</option>
 
                 {pokemon.map((item) => {
                   return <option value={item.id}>{item.name}</option>;
@@ -134,7 +130,6 @@ const Myteams = ({ pokemon }) => {
               <p>Pokemon #5</p>
               <select name="five" id="five" onChange={(e) => {
                     setFive(e.target.value)}}>
-                <option value="none">none</option>
 
                 {pokemon.map((item) => {
                   return <option value={item.id}>{item.name}</option>;
@@ -146,7 +141,6 @@ const Myteams = ({ pokemon }) => {
               <p>Pokemon #6</p>
               <select name="six" id="six" onChange={(e) => {
                     setSix(e.target.value)}}>
-                <option value="none">none</option>
 
                 {pokemon.map((item) => {
                   return <option value={item.id}>{item.name}</option>;
@@ -321,10 +315,6 @@ const Team = ({ pokemon, team, trainer, age, gender, list }) => {
 };
 
 const PokemonTeamCustom = ({ pokemon, team }) => {
-
-    const random = Math.floor(Math.random() * 151);
-
-    console.log(team);
 
   return (
     <div>
