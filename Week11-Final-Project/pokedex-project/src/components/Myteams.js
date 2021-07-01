@@ -6,16 +6,17 @@ import girl from "../img/girl.png";
 
 const Myteams = ({ pokemon }) => {
   const [create, setCreate] = useState(false);
-  const [team, setTeam] = useState("Developers Institute");
-  const [trainer, setTrainer] = useState("Daniel");
-  const [age, setAge] = useState("16");
-  const [gender, setGender] = useState("boy");
+  const [team, setTeam] = useState('');
+  const [trainer, setTrainer] = useState('');
+  const [age, setAge] = useState('');
+  const [gender, setGender] = useState('');
   const [one, setOne] = useState('')
   const [two, setTwo] = useState('')
   const [three, setThree] = useState('')
   const [four, setFour] = useState('')
   const [five, setFive] = useState('')
   const [six, setSix] = useState('')
+  const [list, setList] = useState([one, two, three, four, five, six])
   const [teams, setTeams] = useState([[team, trainer, age, gender, one, two, three, four, five, six]]);
 
 
@@ -187,41 +188,93 @@ const Myteams = ({ pokemon }) => {
           </button>
           <br />
           <div className="teams">
-            {/* <TeamDaniel pokemon={pokemon} /> */}
+
+            <TeamDaniel
+                    pokemon={pokemon}
+                    team='Developers Institute'
+                    trainer='Daniel'
+                    age='14'
+                    gender='boy'
+                    key='daniel'
+                  />
 
             {teams.length > 0 ? (
               teams.map((item, i) => {
-                return (
-                  <Team
-                    pokemon={pokemon}
-                    team={item[0]}
-                    trainer={item[1]}
-                    age={item[2]}
-                    gender={item[3]}
-                    key={i}
-                  />
-                );
+                if(i === 0) {
+                  return <></>
+                } else {
+                  return (
+                    <Team
+                      pokemon={pokemon}
+                      team={item[0]}
+                      trainer={item[1]}
+                      age={item[2]}
+                      gender={item[3]}
+                      key={i}
+                    />
+                  );
+                }
               })
             ) : (
               <></>
             )}
 
-            {/* {
-                    team !== '' ? (
-                        <Team 
-                pokemon={pokemon} 
-                team={team}
-                trainer={trainer}
-                age={age}
-                gender={gender}
-                />
-                    ) : (<></>)
-                } */}
           </div>
         </div>
       </>
     );
   }
+};
+
+const TeamDaniel = ({ pokemon, team, trainer, age, gender }) => {
+
+  const [pokemonteams, setPokemonteams] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/team")
+      .then((res) => res.json())
+      .then((data) => {
+        setPokemonteams(data);
+      });
+  }, []);
+
+  return (
+    <div className="team">
+      <div className="trainer">
+        <div className="trainer-stats">
+          <h3>
+            Team: <span>{team}</span>
+          </h3>
+          <p>
+            Trainer: <span>{trainer}</span>
+          </p>
+          <p>
+            Age: <span>{age}</span>
+          </p>
+          <p>
+            Gender: <span>{gender}</span>
+          </p>
+        </div>
+        <div className="trainer-img">
+          {gender === "boy" ? (
+            <img src={boy} alt="" />
+          ) : (
+            <img src={girl} alt="" />
+          )}
+        </div>
+      </div>
+      <div className="pokemon-list">
+        {pokemonteams.map((team) => {
+          return <PokemonTeam pokemon={pokemon} team={team} key={team.id} />;
+        })}
+
+      </div>
+      <div className="buttons">
+        <button>Edit</button>
+        <button>Delete</button>
+      </div>
+    </div>
+  );
 };
 
 const Team = ({ pokemon, team, trainer, age, gender }) => {
@@ -265,12 +318,7 @@ const Team = ({ pokemon, team, trainer, age, gender }) => {
         {pokemonteams.map((team) => {
           return <PokemonTeam pokemon={pokemon} team={team} key={team.id} />;
         })}
-        {/* <PokemonTeam pokemon={pokemon} />
-                    <PokemonTeam pokemon={pokemon} />
-                    <PokemonTeam pokemon={pokemon} />
-                    <PokemonTeam pokemon={pokemon} />
-                    <PokemonTeam pokemon={pokemon} />
-                    <PokemonTeam pokemon={pokemon} /> */}
+
       </div>
       <div className="buttons">
         <button>Edit</button>
@@ -279,61 +327,6 @@ const Team = ({ pokemon, team, trainer, age, gender }) => {
     </div>
   );
 };
-
-// const TeamDaniel = ({pokemon}) => {
-
-//     return(
-//         <div className="team">
-//             <div className="trainer">
-//                 <div className="trainer-stats">
-//                 <h3>Team: <span>Developers Institute</span></h3>
-//                 <p>Trainer: <span>Daniel</span></p>
-//                 <p>Age: <span>12</span></p>
-//                 <p>Gender: <span>boy</span></p>
-//                 </div>
-//                 <div className="trainer-img">
-//                     <img src={boy} alt="" />
-//                 </div>
-//             </div>
-//             <div className="pokemon-list">
-//                     <PokemonTeamRandom pokemon={pokemon} />
-//                     <PokemonTeamRandom pokemon={pokemon} />
-//                     <PokemonTeamRandom pokemon={pokemon} />
-//                     <PokemonTeamRandom pokemon={pokemon} />
-//                     <PokemonTeamRandom pokemon={pokemon} />
-//                     <PokemonTeamRandom pokemon={pokemon} />
-//             </div>
-//             <div className="buttons">
-//                 <button>Edit</button>
-//                 <button>Delete</button>
-//             </div>
-//         </div>
-//     )
-// }
-
-// const PokemonTeamRandom = ({pokemon}) => {
-
-//     const random = Math.floor(Math.random() * 151);
-
-//     return(
-//         <div>
-//         <Link to={'/pokedex/'+ (random+1)}>
-//             <div className="pokemon-li">
-//                 <div className="sprite">
-//                     <div className="pokeball">
-//                     <img src={pokemon[random].sprites.front_default} alt="" />
-//                     </div>
-//                 </div>
-//                 <div className="pokemon-li-stats">
-//                     <p>{pokemon[random].name.toUpperCase()}</p>
-//                     <div className="hp" style={{backgroundColor: '#333'}}><p style={{color: 'gold', fontWeight: 'bold'}}>HP: </p><div className="hp-bar"></div></div>
-//                     <p style={{textAlign: 'right', marginRight: '10px', color: 'white'}}>{pokemon[random].stats[0].base_stat} / {pokemon[random].stats[0].base_stat}</p>
-//                 </div>
-//             </div>
-//         </Link>
-//         </div>
-//     )
-// }
 
 const PokemonTeam = ({ pokemon, team }) => {
   //   const random = Math.floor(Math.random() * 151);
